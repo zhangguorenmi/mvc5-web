@@ -1,0 +1,29 @@
+
+
+Bootstrap 字体图标(Glyphicons)
+
+什么是字体图标？
+字体图标是在 Web 项目中使用的图标字体。虽然，Glyphicons Halflings 需要商业许可，但是您可以通过基于项目的 Bootstrap 来免费使用这些图标。
+
+=======================================================================================
+用法
+如需使用图标，只需要简单地使用下面的代码即可。请在图标和文本之间保留适当的空间。
+
+<span class="glyphicon glyphicon-search"></span>
+
+=======================================================================================
+.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  -webkit-font-smoothing: antialiased;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.glyphicon-user:before {
+  content: "\e008";
+}

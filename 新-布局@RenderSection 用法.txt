@@ -1,0 +1,27 @@
+ASP.NET MVC之Layout布局与@RenderBody、@RenderPage、@RenderSection
+
+https://www.cnblogs.com/liujie2272/p/6279925.html
+
+
+@RenderBody：                           （Body占位符 = 将子页放入此位置 = 默认Body中第一行 ）
+@RenderSection("scripts",false)         （留给使用该布局页的视图来实现，强制与否）
+
+=================================================================================================
+
+母版页实现默认内容：
+
+@if (IsSectionDefined("head"))
+{
+　　@RenderSection("head", false);
+}
+else
+{
+　　<p>head的默认内容</p>
+}
+--------------------------------------------------
+子页实现默认内容：
+ 
+@section head
+{
+      ........
+}

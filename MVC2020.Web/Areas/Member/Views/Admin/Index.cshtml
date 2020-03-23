@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "管理员";
+    Layout = "~/Areas/Member/Views/Shared/_Layout.cshtml";
+}
+
+@*动态引用样式脚本*@
+@section style{
+    @Styles.Render("~/BootstrapCss/bootstrapCss")
+}
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/BootstrapScripts/bootstrapJs")
+
+    <script src="~/Scripts/moment.js"></script>@*JavaScript 日期处理类库  -没有则不显示数据*@
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+
+        //表格
+        var $table = $('#admingrid');
+        $table.bootstrapTable({
+            toolbar: "#toolbar",
+            showRefresh: true,
+            showColumns: true,
+            showFooter: true,
+            method: "post",
+            url: "@Url.Action("ListJson")",
+            columns: [
+                { title: "state", checkbox: true },
+                { title: "ID", field: "AdministratorId" },
+                { title: "帐号", field: "Accounts" },
+                { title: "登录时间", field: "LoginTime", formatter: function (value) { return moment(value).format("YYYY-MM-DD HH:mm:ss") } },
+                { title: "登录IP", field: "LoginIP" },
+                { title: "创建时间", field: "CreateTime", formatter: function (value) { return moment(value).format("YYYY-MM-DD HH:mm:ss") } },
+                { title: "操作", field: "AdministratorId", formatter: function (value, row, index) { return "<a href=\"javascript:void(0)\" onclick=\"ResetPassword(" + value + ",'" + row.Accounts + "')\">重置密码</a>" } }
+            ]
+        });
+        //表格结束
+    });
+</script>
+}
+
+ 
+
+@*左侧菜单*@
+
+@section SideNav{@Html.Partial("SideNavPartialView")}
+
+@*右侧上导航*@
+<ol class="breadcrumb">
+    <li><span class="glyphicon glyphicon-home"></span>  @Html.ActionLink("首页","Index","Home")</li>
+    
+    <li class="active">@Html.ActionLink("管理员","Index","Admin")</li>
+
+</ol>
+
+@*右侧下*@
+<div id="toolbar" class="btn-group" role="group">
+    <button id="btn_add" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> 添加</button>
+    <button id="btn_del" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span> 删除</button>
+</div>
+<table id="admingrid"></table>
+
+
+

@@ -1,0 +1,6 @@
+
+后台：ModelState.AddModelError("userPwd", "请输入密码！");
+ModelState是一个字典类型，这句话的作用是向ModelState中添加一条错误信息，第一个参数是Key,第二个参数是Value。
+
+
+前台：Html.ValidationMessage(key) 或 Html.ValidationSummary() 来显示

@@ -1,0 +1,8 @@
+E:\NEW.MVC.2020\MVC2020.Web\MVC2020.Core\bin\Debug\MVC2020.Core.dll
+E:\NEW.MVC.2020\MVC2020.Web\MVC2020.Core\bin\Debug\MVC2020.Core.pdb
+E:\NEW.MVC.2020\MVC2020.Web\MVC2020.Core\bin\Debug\EntityFramework.dll
+E:\NEW.MVC.2020\MVC2020.Web\MVC2020.Core\obj\Debug\MVC2020.Core.dll
+E:\NEW.MVC.2020\MVC2020.Web\MVC2020.Core\obj\Debug\MVC2020.Core.pdb
+E:\NEW.MVC.2020\MVC2020.Web\MVC2020.Core\bin\Debug\MVC2020.DataLibrary.dll
+E:\NEW.MVC.2020\MVC2020.Web\MVC2020.Core\bin\Debug\MVC2020.DataLibrary.pdb
+E:\NEW.MVC.2020\MVC2020.Web\MVC2020.Core\obj\Debug\MVC2020.Core.csprojResolveAssemblyReference.cache

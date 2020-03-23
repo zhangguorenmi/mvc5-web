@@ -1,0 +1,53 @@
+
+
+1、关于路径：
+
+（1）绝对路径
+
+包含站点路径的路径：<a href=”http://www.baidu.com/about.jpg”>百度</a>
+
+（2）相对路径
+
+相同目录：<a href=”about.jpg”></a>
+
+上级目录相同：<a href=”../about.jpg”></a>
+
+跟高的父级目录：<a hrf=”../../about.jpg”></a>
+
+（3）根路径
+
+相对路径和绝对路径的折中，以/开头
+
+<a href=”/about/about.jpg”></a>
+
+ ========================================================================================================
+
+2、关于ASP.NET MVC中路径
+
+（1）~为web应用程序根目录运算符，只能位于服务器代码中，不能用于客户端元素中；
+
+（2）src=”@Url.Content(“~/scripts/*.js”)”将虚拟路径转化为站点的绝对路径；若没有~，只返回路径字符串；
+
+若程序位于http://www.aaa.com/bbb下，src=”@Url.Content(“~/scripts/*.js”)”转化为：
+
+http://www.aaa.com/bbb/scripts/*.js
+
+src=” /scripts/*.js”转化为：
+
+http://www.aaa.com/scripts/*.js
+
+（3）MVC3中必须写src=”@Url.Content(“~/Scripts/*.js”)”
+
+而MVC4中可以直接写为src= “~/Scripts/*.js”
+
+ 
+
+3、ASP.NET MVC中添加引用
+
+（1）添加CSS链接
+
+<link href="@Url.Content("~/Content/Site.css")" rel="Stylesheet" type="text/css" />
+
+（2）添加外部脚本引用
+
+<script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
