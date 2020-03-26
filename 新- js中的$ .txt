@@ -1,0 +1,17 @@
+
+
+
+
+
+
+$("#id")=document.getElementById("id")；
+
+这样写看的懂吧，标签选择器$('p')、类选择器$('.myClass')、id选择器$('#myId')，
+
+绑定id前面要加一个"#"，如果不加的话他绑定的是标签，而不是一个id，
+
+比如这个$("li").click(function(){ alert($(this).html());
+
+这个就是绑定li标签，点击所有的li标签都会触发这个点击事件。【重点理解】
+
+如果你要用$(“#id”)，你得引入JavaScript框架，你可以加上这个标签就可以了<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>

@@ -52,7 +52,7 @@
     <Compile Include="Context\ContextFactory.cs" />
     <Compile Include="GeneralFunction\0项目通用方法定义.cs" />
     <Compile Include="GeneralFunction\AdminAuthorizeAttribute.cs" />
-    <Compile Include="GeneralFunction\ModelErrorString.cs" />
+    <Compile Include="GeneralFunction\GetModelErrorString.cs" />
     <Compile Include="GeneralFunction\Security.cs" />
     <Compile Include="GeneralTypes\Paging.cs" />
     <Compile Include="GeneralTypes\Response.cs" />

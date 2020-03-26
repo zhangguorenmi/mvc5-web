@@ -161,6 +161,7 @@
     <Compile Include="Areas\Member\Controllers\AdminController.cs" />
     <Compile Include="Areas\Member\Controllers\HomeController.cs" />
     <Compile Include="Areas\Member\MemberAreaRegistration.cs" />
+    <Compile Include="Areas\Member\Models\AddAdminViewModel.cs" />
     <Compile Include="Areas\Member\Models\LoginViewModel.cs" />
     <Compile Include="Areas\Setup\Controllers\HomeController.cs" />
     <Compile Include="Areas\Setup\SetupAreaRegistration.cs" />
@@ -215,6 +216,7 @@
     <Content Include="Areas\Member\Views\Admin\MyInfo.cshtml" />
     <Content Include="Areas\Member\Views\Admin\Index.cshtml" />
     <Content Include="Areas\Member\Views\Admin\SideNavPartialView.cshtml" />
+    <Content Include="Areas\Member\Views\Admin\AddPartialView.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

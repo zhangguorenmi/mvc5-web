@@ -7,6 +7,7 @@ using MVC2020.Core;
 using MVC2020.Core.GeneralFunction;
 using MVC2020.Core.Model;
 using MVC2020.Web.Areas.Member.Models;
+using System.Web.ModelBinding;
 
 
 namespace MVC2020.Web.Areas.Member.Controllers
@@ -21,7 +22,7 @@ namespace MVC2020.Web.Areas.Member.Controllers
         private AdministratorManager adminManager = new AdministratorManager();
 
         // GET: Member/Admin
-        public ActionResult Index()
+        public ActionResult Index( )
         {
             return View();
         }
@@ -114,7 +115,7 @@ namespace MVC2020.Web.Areas.Member.Controllers
         /// 提供管理员列表数据--无视图
         /// </summary>
         /// <returns></returns>
-       
+
         public JsonResult ListJson( )
         {
 
@@ -130,7 +131,55 @@ namespace MVC2020.Web.Areas.Member.Controllers
         }
 
 
-      
+
+
+        /// <summary>
+        /// 添加的【分部视图】
+        /// </summary>
+        /// <returns></returns>
+        public PartialViewResult AddPartialView( )
+        {
+            return PartialView();
+        }
+
+        /// <summary>
+        /// 添加【Json】
+        /// </summary>
+        /// <param name="addAdmin"></param>
+        /// <returns></returns>
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        //[ActionName("AddPartialView")]
+        public JsonResult AddPartialView(AddAdminViewModel addAdmin)
+        {
+            MVC2020.Core.GeneralTypes.Response resp = new Core.GeneralTypes.Response();
+
+            if(ModelState.IsValid)
+            {
+                if(adminManager.HasAccounts(addAdmin.Accounts))
+                {
+                    resp.Code = 0;
+                    resp.Message = "帐号已存在";
+                }
+                else
+                {
+                    Administrator admin = new Administrator();
+                    admin.Accounts = addAdmin.Accounts;
+                    admin.CreateTime = System.DateTime.Now;
+                    admin.Password = Security.Sha256(addAdmin.Password);
+                    resp = adminManager.Add(admin);
+                }
+            }
+            else
+            {
+                resp.Code = 0;
+                resp.Message = GetModelErrorString.GetModelError(ModelState);
+            }
+            return Json(resp);
+        }
+
+
+
 
 
     }
