@@ -12,6 +12,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{ED1C9906-7DAA-4B6D-9184-BACAD7E45E6E}"
 	ProjectSection(SolutionItems) = preProject
 		ASP.NET MVC路径引用总结.txt = ASP.NET MVC路径引用总结.txt
+		EF中常用的三种数据修改方式.txt = EF中常用的三种数据修改方式.txt
 		ModelState.AddModelError使用.txt = ModelState.AddModelError使用.txt
 		Route路由.txt = Route路由.txt
 		抽象父类（抽象方法 虚方法）.txt = 抽象父类（抽象方法 虚方法）.txt

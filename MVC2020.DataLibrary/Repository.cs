@@ -274,8 +274,12 @@ namespace MVC2020.DataLibrary
         /// <returns>在“isSave”为True时返回受影响的对象的数目，为False时直接返回0</returns>
         public int Delete(T entity,bool isSave)
         {
-            DbContext.Set<T>().Remove(entity);
+            DbContext.Set<T>().Attach(entity);
+            DbContext.Entry<T>(entity).State = EntityState.Deleted;
             return isSave ? DbContext.SaveChanges() : 0;
+
+            //DbContext.Set<T>().Remove(entity);
+            //return isSave ? DbContext.SaveChanges() : 0;
         }
 
         #endregion
