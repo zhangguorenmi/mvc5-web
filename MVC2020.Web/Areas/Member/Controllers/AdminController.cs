@@ -214,5 +214,21 @@ namespace MVC2020.Web.Areas.Member.Controllers
 
 
 
+
+        /// <summary>
+        /// 测试 
+        /// Response.Code:1-成功，2-部分删除，0-失败
+        /// Response.Data:删除的数量
+        /// </summary>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult DeleteJson11(Array ids)
+        {
+
+            int a;
+            return Json(ids);
+        }
+
+
     }
 }

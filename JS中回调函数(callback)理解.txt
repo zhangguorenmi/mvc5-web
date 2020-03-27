@@ -1,0 +1,129 @@
+﻿
+
+JS中回调函数(callback)理解
+https://blog.csdn.net/undericon/article/details/81188923#commentBox
+
+==================================================================================================
+前言
+今天有个刚入行的小兄弟问到了回调函数，讲解了一番以后觉得不能白讲，得把这些东西记下来，虽然很基础。。。
+
+介绍
+首先从英文介绍开始
+
+A callback is a function that is passed as an argument to another function and is executed after its parent function has completed.
+
+这里只是js里的解释。
+
+开始
+字面上理解下来就是，回调就是一个函数的调用过程。那么就从理解这个调用过程开始吧。函数a有一个参数，这个参数是个函数b，当函数a执行完以后执行函数b。那么这个过程就叫回调。
+
+其实中文也很好理解：回调，回调，就是回头调用的意思。函数a的事先干完，回头再调用函数b。
+
+举个现实的例子：约会结束后你送你女朋友回家，离别时，你肯定会说：“到家了给我发条信息，我很担心你。”对不，然后你女朋友回家以后还真给你发了条信息。小伙子，你有戏了。
+
+其实这就是一个回调的过程。你留了个函数b（要求女朋友给你发条信息）给你女朋友，然后你女朋友回家，回家的动作是函数a。她必须先回到家以后，函数a的内容执行完了，再执行函数b，然后你就收到一条信息了。
+
+这里必须清楚一点：函数b是你以参数形式传给函数a的，那么函数b就叫回调函数。
+
+ 也许有人有疑问了:一定要以参数形式传过去吗，我不可以直接在函数a里面调用函数b吗？确实可以。求解中。
+
+解惑:如果你直接在函数a里调用的话，那么这个回调函数就被限制死了。但是使用函数做参数就有下面的好处：当你a(b)的时候函数b就成了回调函数，而你还可以a(c)这个时候，函数c就成了回调函数。如果你写成了function a(){...;b();}就失去了变量的灵活性。
+
+上一段代码大家可以跑一下：
+
+function a(callback)
+{   
+    alert("我是parent函数a！");
+    alert("调用回调函数");
+    callback();
+}
+function b(){
+alert("我是回调函数b");
+  
+}
+function c(){
+alert("我是回调函数c");
+  
+}
+  
+function test()
+{
+    a(b);
+   a(c);
+}
+根据代码示例加深理解
+问题：
+
+现在有函数如下定义：
+function A(a,callback){
+....
+}
+function B(){
+....
+}
+则可以有如下调用
+A(a,B);来实现回调。
+现在我希望传给B一个参数c，即实现类似于:  A(a,B(c)); 的效果，应该如何实现？
+
+function A(a,callback){ 
+var b=callback; 
+alert(a+b); 
+} 
+function B(c){ 
+return (-c); 
+} 
+A(4,B(3))
+根据jquery的ajax请求常见的场景再去写一个示例：
+
+我包装了jQuery的ajax方法：
+
+function doAjax(u,param,callback){
+      $.ajax({
+            type:'POST',
+            url:u,
+            data:param,
+            success:callback
+      });
+}
+ 
+function showAlert(data){
+     alert(data);
+}
+ 
+比如这样调用 doAjax("url","id=1",showAlert);
+$.ajax 在success后,会返回一个data到showAlert中,显示出来 ,没有问题.
+可是,当我想多传一个参数给showAlert时怎么写?
+写成doAjax("server.php","id=12&type=1",showAlert("hi",data))、或者把上面的success:callback 写成success:callback(msg,data)显然都不行,如之奈何?
+
+其实很简单，很多方法都定义了回调函数,回调函数也是函数,就是说不管怎么传，只需要是个函数类型即可。写法如下：
+
+方式1，
+doAjax(参数1,参数2,function(request,opts){
+         callback(request,opts,agrs);
+ });
+function callback(request,opts,args){
+               
+};
+方式2，
+var args=N;
+doAjax(参数1,参数2,function(request,opts){
+       var X=N;
+       回调函数代码块..
+       和以上几乎一样，看个人编码方式选择。     
+});
+再看一个从父函数传递给回调函数的示例
+
+function e(m,n,Callback){  
+    var d = m+n;  
+    alert("一个从父函数e 产生的参数将要被传递给回调函数 ，这个参数是:"+d);  
+     
+    //这里才写你想调用的函数---参数要正确  
+    Callback(d);   
+}  
+function callback(data){  
+        alert("我是回调函数，我的名字叫:callback ,我接收到来自父函数的参数，参数是:"+data);   
+}
+e(1,2,callback)
+————————————————
+版权声明：本文为CSDN博主「月亮巡视人间」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/undericon/article/details/81188923

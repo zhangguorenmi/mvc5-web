@@ -18,7 +18,7 @@
 
         $(document).ready(function () {
 
-           // function () {
+            // function () {
             //    alert("我的第一个jQuery代码!");
             //};
             //表格
@@ -27,7 +27,7 @@
                 toolbar: "#toolbar",
                 showRefresh: true,
                 showColumns: true,
-                showFooter: true, 
+                showFooter: true,
                 method: "post",
                 url: "@Url.Action("ListJson")",
                 columns: [
@@ -52,8 +52,7 @@
 
                     title: "<span class='glyphicon glyphicon-plus'></span>添加管理员",
                     //对话框内容
-                    message: function (dialog)
-                    {
+                    message: function (dialog) {
                         var $message = $('<div></div>');
                         var pageToLoad = dialog.getData('pageToLoad');
                         $message.load(pageToLoad);
@@ -109,40 +108,113 @@
             });
             //添加按钮结束
 
-            //删除按钮
-            $("#btn_del").click(function () {
-                var selected = $table.bootstrapTable('getSelections');
-                if ($(selected).length > 0) {
-                    BootstrapDialog.confirm("确定删除选中的" + $(selected).length + "位管理员", function (result) {
-                        if (result) {
-                            var ids = new Array($(selected).length);
-                            $.each(selected, function (index, value) {
-                                ids[index] = value.AdministratorID;
-                            });
-                            $.post("@Url.Action("DeleteJson","Admin")", { ids: ids }, function (data) {
-                                if (data.Code != 0) {
-                                    BootstrapDialog.show({
-                                        message: data.Message,
-                                        buttons: [{
-                                            icon: "glyphicon glyphicon-ok",
-                                            label: "确定",
-                                            action: function (dialogItself) {
-                                                $table.bootstrapTable("refresh");
-                                                dialogItself.close();
+            //删除按钮开始
+            $("#btn_del").click(
+                //函数开始click
+                function () {
+                    var selected = $table.bootstrapTable('getSelections'); //confirm确认选择框
+
+                    if ($(selected).length > 0) {
+                        BootstrapDialog.confirm(
+                            //参数二
+                            "确定删除选中的" + $(selected).length + "位管理员",
+                            //参数最后一个
+                                function (result) {// 点击确定按钮时，result为true
+                                   
+                                    if (result) {
+
+                                        var ids = new Array($(selected).length);
+
+                                        $.each(selected, function (index, value) {
+
+                                            ids[index] = value.AdministratorID;
+
+                                        });
+
+  
+                                        //开始post    定死的名称格式{ ids: ids }
+
+                                        $.post(
+
+                                            "@Url.Action("DeleteJson","Admin")",
+                                            { ids: ids },
+
+                                            function (data) {
+                                            if (data.Code != 0) {
+                                                BootstrapDialog.show({
+                                                    message: data.Message,
+                                                    buttons: [{
+                                                        icon: "glyphicon glyphicon-ok",
+                                                        label: "确定",
+                                                        action: function (dialogItself) {
+                                                            $table.bootstrapTable("refresh");
+                                                            dialogItself.close();
+                                                        }
+                                                    }]
+
+                                                });
                                             }
-                                        }]
+                                            else BootstrapDialog.alert(data.Message);
 
-                                    });
-                                }
-                                else BootstrapDialog.alert(data.Message);
+                                            },
 
-                            }, "json");
-                        }
-                    });
+                                        "json"
+
+                                        );//结束post
+
+                                    } else {
+
+
+                                        //测试
+                                        var dds = new Array();
+                                        dds[0] = 10;
+                                        dds[1] = 11;
+                                        dds[2] = 12;
+                                        //alert("您点击了取消" + ids)
+                                        var params = $.param({ 'dds': dds }, true);
+
+                                        alert("您点击了取消" + params)
+
+                                        
+
+                                        $.post("@Url.Action("DeleteJson11","Admin")", params, function (data) {
+                                            if (data.Code != 0) {
+                                                BootstrapDialog.show({
+                                                    message: data.Message,
+                                                    buttons: [{
+                                                        icon: "glyphicon glyphicon-ok",
+                                                        label: "确定",
+                                                        action: function (dialogItself) {
+                                                            $table.bootstrapTable("refresh");
+                                                            dialogItself.close();
+                                                        }
+                                                    }]
+
+                                                });
+                                            }
+                                            else BootstrapDialog.alert(data.Message);
+
+                                        }, "json"
+
+                                        );
+
+
+
+                                    }
+                                    
+
+                                    
+                                });
+                    }
+                    else BootstrapDialog.warning("请选择要删除的行");
                 }
-                else BootstrapDialog.warning("请选择要删除的行");
-            });
+                //函数结束click
+
+
+
+            );
             //删除按钮结束
+
 
 
         });

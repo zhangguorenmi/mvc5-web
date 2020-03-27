@@ -1,0 +1,101 @@
+
+
+jQuery中$.each（)方法的使用
+https://www.cnblogs.com/zhaixr/p/7069857.html
+
+=====================================================================
+
+$.each()是对数组，json和dom结构等的遍历，说一下他的使用方法吧。
+
+1、遍历一维数组
+
+ var arr1=['aa','bb','cc','dd'];
+ $.each(arr1,function(i,val){ //两个参数，第一个参数表示遍历的数组的下标，第二个参数表示下标对应的值
+ console.log(i+'```````'+val);
+输出的结果为：
+
+0```````aa
+1```````bb
+ 2```````cc
+3```````dd
+2、遍历二维数组
+
+var arr2=[['aaa','bbb'],['ccc','ddd'],['eee','fff']];
+$.each(arr2,function(i,item){ //两个参数，第一个参数表示下标，第二个参数表示一维数组中的每一个数组
+ console.log(i+'````'+item);
+输出的结果为：
+
+0````aaa,bbb
+1````ccc,ddd
+2````eee,fff
+此时可以对输出的一维数组进行遍历
+
+$.each(item,function(i,val){  //遍历二维数组
+          console.log(i+'`````'+val);
+  })
+输出的结果为：
+
+0````aaa,bbb
+    0`````aaa
+    1`````bbb
+1````ccc,ddd
+    0`````ccc
+    1`````ddd
+2````eee,fff
+    0`````eee
+    1`````fff
+3、处理json
+
+var json1={key1:'a',key2:'b',key3:'c'};
+ $.each(json1,function(key,value){  //遍历键值对
+            console.log(key+'````'+value);
+  })
+输出的结果为：
+
+key1````a
+key2````b
+key3````c
+4、当二位数组中有json对象时
+
+复制代码
+var arr3=[{name:'n1',age:18},{name:'n2',age:20},{name:'n3',age:22}];
+        $.each(arr3,function(i,val){
+            console.log(i+'`````'+val);   
+　　　　//输出
+　　　　/* 0`````[object Object] 1`````[object Object] i2`````[object Object]*/
+            console.log(val.name); //获取每一个json里面的name值
+            console.log(val["name"]);
+            $.each(val,function(key,val2){
+                console.log(key+'```'+val2);
+            })
+        });
+复制代码
+5、处理dom元素
+
+<input name="aaa" type="hidden" value="111" />
+<input name="bbb" type="hidden" value="222" />
+<input name="ccc" type="hidden" value="333" />
+<input name="ddd" type="hidden" value="444"/>
+复制代码
+$.each($('input:hidden'),function(i,val){
+            console.log(i+'````'+val);
+            /*0````[object HTMLInputElement]
+            1````[object HTMLInputElement]
+            2````[object HTMLInputElement]
+            3````[object HTMLInputElement]*/
+            console.log(val.name+'`````'+val.value);
+           /* aaa`````111
+           bbb`````222
+            ccc`````333
+           ddd`````444*/
+        })
+复制代码
+以上就是$.each()最基本的使用了，
+
+jQuery中还有另外一种写法来遍历元素
+
+$("input:hidden").each(function(i,val){  //第一个参数表示索引下标，第二个参数表示当前索引元素
+    alert(i);
+    alert(val.name);
+    alert(val.value);       
+});

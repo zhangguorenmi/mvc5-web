@@ -1,0 +1,59 @@
+
+
+bootstrap dialog confirm 确认选择框 ，完成操作提示框
+https://blog.csdn.net/weixin_30519071/article/details/98089106
+
+===================================================================================================================
+
+1. 依赖文件：
+
+bootstrap.js
+
+bootstrap-dialog.js
+
+bootstrap.css
+
+bootstrap-dialog.css
+
+2.代码
+
+ 
+
+BootstrapDialog.confirm({
+    title : '确认',
+    message : "确认要删除？",
+    type : BootstrapDialog.TYPE_WARNING, // <-- Default value is
+    // BootstrapDialog.TYPE_PRIMARY
+    closable : true, // <-- Default value is false，点击对话框以外的页面内容可关闭
+    draggable : true, // <-- Default value is false，可拖拽
+    btnCancelLabel : '取消', // <-- Default value is 'Cancel',
+    btnOKLabel : '确定', // <-- Default value is 'OK',
+    btnOKClass : 'btn-warning', // <-- If you didn't specify it, dialog type
+    size : BootstrapDialog.SIZE_SMALL,
+    // 对话框关闭的时候执行方法
+    onhide : function () {
+        
+    },
+    callback : function(result) {
+        // 点击确定按钮时，result为true
+        if (result) {
+            // 执行方法
+            funcok.call();
+        }
+    }
+});
+ 
+
+2.完成操作提示框
+  <link href="/plugin/toastr/toastr.min.css" rel="stylesheet" type="text/css" />
+  <script src="/plugin/toastr/toastr.min.js"></script>
+ 
+
+ 
+
+  toastr.success('你有新消息了！');
+
+ 
+
+转载于:https://www.cnblogs.com/zhuxiang1633/p/9057110.html
+

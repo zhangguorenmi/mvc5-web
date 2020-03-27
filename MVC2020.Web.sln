@@ -25,6 +25,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", 
 		？无法打开区域默认网页.txt = ？无法打开区域默认网页.txt
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bootstrap 插件及语法", "bootstrap 插件及语法", "{183EB7FE-0F05-4D29-A3C3-BAAC7D51CA2E}"
+	ProjectSection(SolutionItems) = preProject
+		bootstrap dialog confirm 确认选择框.txt = bootstrap dialog confirm 确认选择框.txt
+		jQuery中$.each.txt = jQuery中$.each.txt
+		JS中回调函数(callback)理解.txt = JS中回调函数(callback)理解.txt
+		List.txt = List.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +54,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{183EB7FE-0F05-4D29-A3C3-BAAC7D51CA2E} = {ED1C9906-7DAA-4B6D-9184-BACAD7E45E6E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		VisualSVNWorkingCopyRoot = .

@@ -1,0 +1,76 @@
+
+
+C# List<T>
+https://bbs.csdn.net/topics/390462516?page=1
+
+==============================================================================================
+
+所属命名空间：using System.Collections.Generic;
+
+  List<T>类是  ArrayList 类的泛型等效类。 该类使用大小可按需动态增加的数组实现  IList<T> 泛型接口。 
+
+泛型的好处： 它为使用 c#语言编写面向对象程序增加了极大的效力和灵活性。不会强行对值类型进行装箱和拆箱，或对引用类型进行向下强制类型转换，所以性能得到提高。
+
+一、  List的基础、常用方法：
+
+1、List<T> mList = new List<T>();    
+a.T为列表中元素类型，现在以string类型作为例子
+如：  List<string> mList = new List<string>();
+
+b.增加元素：List. Add(T item)    添加一个元素
+如：mList.Add("HQTGS");
+
+c.插入元素：Insert(int index, T item);    在index位置添加一个元素
+如：mList.Insert(1, "HQTGS"); 
+
+d.删除元素:  List. Remove(T item)       删除一个值
+                如：mList.Remove("HQTGS"); 
+
+                List. RemoveAt(int index);   删除下标为index的元素
+
+               如.：mList.RemoveAt(0); 
+
+ List. RemoveRange(int index, int count);   从下标index开始，删除count个元素
+                如.：mList.RemoveRange(3, 2); //超出删除的范围会出错
+注：删除某元素后，其后面的元素下标自动跟进
+
+e.判断是否存在List:List.Contains(T item)   得到的结果是返回true或false
+
+f.排序：List.Sort ()   //默认是元素第一个字母按升序 
+
+           给List里面元素顺序反转：
+           List. Reverse()   //可以与List.Sort()配合使用，达到想要的效果
+
+遍历List中元素:   
+　　　foreach (T element in mList)  T的类型与mList声明时一样
+            {
+                 Console.WriteLine(element);
+            } 
+
+g.List清空：List. Clear ()
+           如：mList.Clear();
+
+h.获得List中元素数目：
+           List. Count ()    返回int值
+
+i.添加数组进List:string[] temArr = { Ha","Hunter", "Tom", "Lily", "Jay", "Jim", "Kuku", " "Locu" };
+            mList.AddRange(temArr);
+
+2、List<T> testList =new List<T> (IEnumerable<T> collection);
+      以一个集合作为参数创建List
+
+ E.g.： string[] temArr = { "Ha", "Hunter", "Tom", "Lily", "Jay", "Jim", "Kuku", "Locu" };
+                  List<string> testList = new List<string>(temArr);
+
+3、List与数组的相互转换
+1.从string[]转List<string>
+例如：string[] str={“1”,”2”};
+List<string> list=new List<string>(str);
+2.从List<string>转string[] 
+
+例如：List<string> list=new List<string>;
+String[] str=list.ToArray();
+
+//ViewState["idlist"]转换成List<>
+
+List<int> idlist=(List<int>)ViewState["idlist"]
