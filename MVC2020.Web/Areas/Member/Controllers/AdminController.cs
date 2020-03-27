@@ -222,7 +222,7 @@ namespace MVC2020.Web.Areas.Member.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public JsonResult DeleteJson11(Array ids)
+        public JsonResult DeleteJson11(List<int> ids)//换成 new Array(); 不执行
         {
 
             int a;
