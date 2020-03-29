@@ -186,7 +186,7 @@ namespace MVC2020.Web.Areas.Member.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public JsonResult DeleteJson(List<int> ids)
+        public JsonResult DeleteJson(List<int> ids)//【重要】【重要】【重要】ids名称为post中json的键值名称
         {
             int _total = ids.Count();
             Response _res = new Response();
@@ -217,16 +217,16 @@ namespace MVC2020.Web.Areas.Member.Controllers
 
         /// <summary>
         /// 测试 
-        /// Response.Code:1-成功，2-部分删除，0-失败
-        /// Response.Data:删除的数量
+        ///  { "data1": 11 }   =  List<int> data1 = int data1
+        ///  
         /// </summary>
         /// <returns></returns>
         [HttpPost]
-        public JsonResult DeleteJson11(List<int> ids)//换成 new Array(); 不执行
+        public JsonResult DeleteJson11(int data1)//换成 new Array(); 不执行
         {
+           // int _total = data1.Count();
 
-            int a;
-            return Json(ids);
+            return Json(data1);
         }
 
 

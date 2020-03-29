@@ -1,0 +1,55 @@
+
+
+
+JOSN的6种数据类型  https://baijiahao.baidu.com/s?id=1652241214837639808&wfr=spider&for=pc
+
+一、string：字符串，必须要用双引号引起来。
+二、number：数值，与JavaScript的number一致，整数（不使用小数点或指数计数法）最多为 15 位，小数的最大位数是 17。
+三、object：JavaScript的对象形式，{ key:value }表示方式，可嵌套。
+四、array：数组，JavaScript的Array表示方式[ value ]，可嵌套。
+五、true/false：布尔类型，JavaScript的boolean类型。
+六、null：空值，JavaScript的null。
+
+
+=======================================================================================================
+
+对象,json对象和数组   https://www.jianshu.com/p/9c12d925f03a
+
+【一对象】
+
+所谓对象，就是一种无序的数据集合，由若干个“键值对”（key-value）构成。
+
+var o = { 
+    name: 'mumu';
+    age: 20;
+    sex: 'female',
+};
+访问对象属性的方式：
+
+objName.property，property类型必须以_/字符开头，固定值，不能是变量
+objName['property']，property类型为任意类型，可以是数字，可以是变量，例如：
+var o = { 
+   1: 'a',
+'1p': "Hello World", 
+'h w': "Hello World",
+ 'p+q': "Hello World"
+};
+//遍历对象中使用
+for (var key in obj){
+      obj[key] = .......
+ }
+注：
+
+【【【对象的所有键名都是字符串，所以加不加引号都可以。如果键名是数值，会被自动转为字符串。】】】
+
+
+【二2.json对象】
+
+son和xml一样，都是一种存储数据格式。
+
+语法：
+
+·数据在名称/值对中,用且只能用" "包裹
+·数据由逗号分隔
+·花括号保存对象
+·方括号保存数组

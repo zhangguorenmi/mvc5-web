@@ -120,7 +120,7 @@
                             "确定删除选中的" + $(selected).length + "位管理员",
                             //参数最后一个
                                 function (result) {// 点击确定按钮时，result为true
-                                   
+
                                     if (result) {
 
                                         var ids = new Array($(selected).length);
@@ -131,93 +131,107 @@
 
                                         });
 
-  
+
                                         //开始post    定死的名称格式{ ids: ids }
 
                                         $.post(
 
                                             "@Url.Action("DeleteJson","Admin")",
-                                            { ids: ids },
+                                                { "ids": ids },
 
-                                            function (data) {
-                                            if (data.Code != 0) {
-                                                BootstrapDialog.show({
-                                                    message: data.Message,
-                                                    buttons: [{
-                                                        icon: "glyphicon glyphicon-ok",
-                                                        label: "确定",
-                                                        action: function (dialogItself) {
-                                                            $table.bootstrapTable("refresh");
-                                                            dialogItself.close();
-                                                        }
-                                                    }]
+                                                function (data) {
+                                                    if (data.Code != 0) {
+                                                        BootstrapDialog.show({
+                                                            message: data.Message,
+                                                            buttons: [{
+                                                                icon: "glyphicon glyphicon-ok",
+                                                                label: "确定",
+                                                                action: function (dialogItself) {
+                                                                    $table.bootstrapTable("refresh");
+                                                                    dialogItself.close();
+                                                                }
+                                                            }]
 
-                                                });
-                                            }
-                                            else BootstrapDialog.alert(data.Message);
+                                                        });
+                                                    }
+                                                    else BootstrapDialog.alert(data.Message);
 
-                                            },
+                                                },
 
-                                        "json"
+                                            "json"
 
-                                        );//结束post
+                                            );//结束post
 
-                                    } else {
+                                    } else { }
 
-
-                                        //测试
-                                        var dds = new Array();
-                                        dds[0] = 10;
-                                        dds[1] = 11;
-                                        dds[2] = 12;
-                                        //alert("您点击了取消" + ids)
-                                        var params = $.param({ 'dds': dds }, true);
-
-                                        alert("您点击了取消" + params)
-
-                                        
-
-                                        $.post("@Url.Action("DeleteJson11","Admin")", params, function (data) {
-                                            if (data.Code != 0) {
-                                                BootstrapDialog.show({
-                                                    message: data.Message,
-                                                    buttons: [{
-                                                        icon: "glyphicon glyphicon-ok",
-                                                        label: "确定",
-                                                        action: function (dialogItself) {
-                                                            $table.bootstrapTable("refresh");
-                                                            dialogItself.close();
-                                                        }
-                                                    }]
-
-                                                });
-                                            }
-                                            else BootstrapDialog.alert(data.Message);
-
-                                        }, "json"
-
-                                        );
-
-
-
-                                    }
-                                    
-
-                                    
                                 });
                     }
                     else BootstrapDialog.warning("请选择要删除的行");
                 }
-                //函数结束click
+                    //函数结束click
 
 
 
-            );
+                );
             //删除按钮结束
 
 
 
         });
+
+        //#region click
+        $("#btn_cesi").click(
+               //函数开始click
+               function () {
+                   //测试
+                   var dds = new Array(3);
+                   dds[0] = 10;
+                   dds[1] = 11;
+                   dds[2] = 12;
+                   alert("您点击了取消 " + dds)
+
+                   //var data1 = { "id": "111" };//写法不对
+
+                   $.post(
+
+                    "@Url.Action("DeleteJson11","Admin")",
+
+                   { "data1": 11 },//ids名称是固定死的  不能改变
+
+                    function (data) {
+                        if (data.Code != 0) {
+                            BootstrapDialog.show({
+                                message: data.Message,
+                                buttons: [{
+                                    icon: "glyphicon glyphicon-ok",
+                                    label: "确定",
+                                    action: function (dialogItself) {
+                                        $table.bootstrapTable("refresh");
+                                        dialogItself.close();
+                                    }
+                                }]
+
+                            });
+                        }
+                        else BootstrapDialog.alert(data.Message);
+
+                    },
+
+                "json");
+
+               });
+        //#endregion
+
+        //#region Demo
+        var demo = function () {
+            var a = 100;
+        };
+        //#endregion
+
+        //#region click
+        $("#btn_cesi").click();
+        //#endregion
+
     </script>
 }
 
@@ -239,6 +253,7 @@
 <div id="toolbar" class="btn-group" role="group">
     <button id="btn_add" class="btn btn-default"><span class="glyphicon glyphicon-plus"></span> 添加</button>
     <button id="btn_del" class="btn btn-default"><span class="glyphicon glyphicon-remove"></span> 删除</button>
+    <button id="btn_cesi" class="btn btn-default"><span class="glyphicon glyphicon-cloud"></span> 测试</button>
 </div>
 <table id="admingrid"></table>
 

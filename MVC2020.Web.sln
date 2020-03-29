@@ -31,6 +31,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bootstrap 插件及语法",
 		jQuery中$.each.txt = jQuery中$.each.txt
 		JS中回调函数(callback)理解.txt = JS中回调函数(callback)理解.txt
 		List.txt = List.txt
+		TextFile1.txt = TextFile1.txt
 	EndProjectSection
 EndProject
 Global
