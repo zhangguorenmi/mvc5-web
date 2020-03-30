@@ -9,12 +9,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC2020.Core", "MVC2020.Cor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC2020.DataLibrary", "MVC2020.DataLibrary\MVC2020.DataLibrary.csproj", "{61A689C6-1A4B-4EF3-8016-810761BFECEC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NewFolder1", "NewFolder1", "{ED1C9906-7DAA-4B6D-9184-BACAD7E45E6E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "问题集", "问题集", "{ED1C9906-7DAA-4B6D-9184-BACAD7E45E6E}"
 	ProjectSection(SolutionItems) = preProject
 		ASP.NET MVC路径引用总结.txt = ASP.NET MVC路径引用总结.txt
 		EF中常用的三种数据修改方式.txt = EF中常用的三种数据修改方式.txt
 		ModelState.AddModelError使用.txt = ModelState.AddModelError使用.txt
 		Route路由.txt = Route路由.txt
+		使用git bash上传文件到github仓库.txt = 使用git bash上传文件到github仓库.txt
 		抽象父类（抽象方法 虚方法）.txt = 抽象父类（抽象方法 虚方法）.txt
 		抽象类和接口的区别以及使用场景.txt = 抽象类和接口的区别以及使用场景.txt
 		新- js中的$ .txt = 新- js中的$ .txt
@@ -28,10 +29,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bootstrap 插件及语法", "bootstrap 插件及语法", "{183EB7FE-0F05-4D29-A3C3-BAAC7D51CA2E}"
 	ProjectSection(SolutionItems) = preProject
 		bootstrap dialog confirm 确认选择框.txt = bootstrap dialog confirm 确认选择框.txt
+		JOSN的6种数据类型.txt = JOSN的6种数据类型.txt
 		jQuery中$.each.txt = jQuery中$.each.txt
 		JS中回调函数(callback)理解.txt = JS中回调函数(callback)理解.txt
 		List.txt = List.txt
-		TextFile1.txt = TextFile1.txt
 	EndProjectSection
 EndProject
 Global

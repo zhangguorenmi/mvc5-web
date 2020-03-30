@@ -30,7 +30,7 @@ namespace MVC2020.Core.Model
         /// </summary>
         [DataType(DataType.Password)]
         [Required(ErrorMessage = "必须输入{0}")]
-        [StringLength(256,ErrorMessage = "{0}长度少于{1}个字符")]
+        [StringLength(20,MinimumLength = 6,ErrorMessage = "{0}长度{2}-{1}个字符")]
         [Display(Name = "密码")]
         public string Password { get; set; }
 

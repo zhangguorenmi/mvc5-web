@@ -90,10 +90,10 @@ namespace MVC2020.Web.Areas.Member.Controllers
             return View(adminManager.Find(Session["Accounts"].ToString()));
         }
 
+
         /// <summary>
-        /// 个人信息
+        /// 我的资料 -  post 表单提交FormCollection
         /// </summary>
-        /// <param name="form"></param>
         /// <returns></returns>
         [ValidateAntiForgeryToken]
         [HttpPost]
@@ -110,6 +110,8 @@ namespace MVC2020.Web.Areas.Member.Controllers
             }
             return View(_admin);
         }
+
+       
 
 
         /// <summary>
@@ -229,6 +231,23 @@ namespace MVC2020.Web.Areas.Member.Controllers
             return Json(data1);
         }
 
+
+        /// <summary>
+        /// 重置密码【Ninesky】
+        /// </summary>
+        /// <param name="id">管理员ID</param>
+        /// <returns></returns>
+        [HttpPost]
+        public JsonResult ResetPassword(int id)
+        {
+            string _password = "Ninesky";
+            Response _resp = adminManager.ChangePassword(id,Security.Sha256(_password));
+            if(_resp.Code == 1) _resp.Message = "密码重置为：" + _password;
+            return Json(_resp);
+        }
+
+
+        
 
     }
 }

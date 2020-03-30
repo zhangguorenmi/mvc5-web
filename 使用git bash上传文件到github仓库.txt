@@ -1,0 +1,25 @@
+
+
+使用git bash上传文件到github仓库  https://blog.csdn.net/scottzeg/article/details/82744685
+
+一、Git hub官网创建repositories
+
+二、在本地导入你创建的repositories
+比如，在本地创建一个文件夹，for example: ML\，专门存放这个repositories
+然后在这个文件夹底下打开git bash，相关命令如图所示：
+
+1) git init
+2) git clone + your repositories's website
+
+三、在本地增添内容到你创建的repositories文件夹
+
+四、在你创建的repositories文件夹路径下打开git bash，并按一下命令上传
+
+1) git init 
+2) git add .
+3) git status(可不写)
+4) git commit -m"name" (name可以自己定义)
+5) git push 
+
+
+五、刷新你的GitHub，就能看到更新的文件了
