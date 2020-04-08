@@ -8,6 +8,10 @@ using MVC2020.Core.Context;
 using MVC2020.Core.GeneralTypes;
 using MVC2020.DataLibrary;
 
+
+//向下封装一层  增加返回结果
+//（如ADD  添加成功如否  和  添加的数据）
+
 namespace MVC2020.Core
 {
     /// <summary>

@@ -106,3 +106,50 @@ MVC5 网站开发之六 管理员 2、添加、删除、重置密码、修改密码、列表浏览（https://ww
 
  准备开始 MVC5 网站开发之七 用户功能 1、角色的后台管理 https://www.cnblogs.com/mzwhj/p/5264035.html
 
+ =======================================================================================================
+
+ 2020-04-06   23:00
+
+ 匿名函数 Func<T,TKey> 与匿名函数表达式 Expression<Func<T,TKey>    【EF格式专用】
+
+ ·遇到严峻问题一：FindPageList<TKey>(out int totalNumber,Expression<Func<T,TKey>> order)
+ ·遇到严峻问题二：public int GetSum(out int numberFirst,out int numberSecond)
+ ·遇到严峻问题三：base.Repository.FindList
+
+   解：  int aa = 3;【out解决方法】
+         IQueryable<Administrator> ikk = base.Repository.FindPageList<int>(1,1,out aa,Administrator => Administrator.AdministratorID,true);
+
+   解：  out与ref比较 【out只输出，ref有进有出】
+
+
+=============================================================================================================
+
+2020-1-4-8  23：00
+
+·重写父类函数的两种方法  Virtual    override  ：（base.Clear）
+·重载和方法重写的区别    1.必须在同一个类中   2.在不同的类中
+
+层次总结：
+     
+	repository    <泛型类>数据库交互类                                                  ====  DAL
+	----------------------------------------------------------------------------------------------
+	BaseXXX       <泛型类>数据库交互类一次封装（1.方法为Virtual    2.返回为Response）   ====  BLL
+	UserBaseXXX   <继承类>与本层交互类打交道  （1.实现方法override 2.base.XXX）         ====  BLL
+
+·枚举类型
+
+            OrderParam cd = new OrderParam();
+             cd.PropertyName = "OrdName";
+              cd.Method = OrderMethod.ASC;
+
+			Console.WriteLine("asc = {0}", OrderMethod.ASC);  ===输出结果【asc =ASC】
+
+            Console.WriteLine("asc = {0},{1}", cd.PropertyName,cd.Method);   ===输出结果【asc =OrdName，ASC】
+
+           
+
+============================================================================================================
+
+
+
+   

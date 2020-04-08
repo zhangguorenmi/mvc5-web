@@ -160,6 +160,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Member\Controllers\AdminController.cs" />
     <Compile Include="Areas\Member\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Member\Controllers\RoleController.cs" />
     <Compile Include="Areas\Member\MemberAreaRegistration.cs" />
     <Compile Include="Areas\Member\Models\AddAdminViewModel.cs" />
     <Compile Include="Areas\Member\Models\LoginViewModel.cs" />
@@ -171,6 +172,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -178,6 +180,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Areas\Member\Views\Admin\HtmlPage1.html" />
     <Content Include="Content\bootstrap-datetimepicker.css" />
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\bootstrap-dialog.css" />
@@ -192,6 +195,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="HtmlPage1.html" />
     <Content Include="Scripts\bootstrap-datetimepicker.js" />
     <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
     <Content Include="Scripts\bootstrap-dialog.js" />
@@ -217,6 +221,11 @@
     <Content Include="Areas\Member\Views\Admin\Index.cshtml" />
     <Content Include="Areas\Member\Views\Admin\SideNavPartialView.cshtml" />
     <Content Include="Areas\Member\Views\Admin\AddPartialView.cshtml" />
+    <Content Include="Areas\Member\Views\Role\Mess.cshtml" />
+    <Content Include="Areas\Member\Views\Role\Index.cshtml" />
+    <Content Include="Areas\Member\Views\Role\SideNavPartialView.cshtml" />
+    <Content Include="Areas\Member\Views\Role\Add.cshtml" />
+    <Content Include="Areas\Member\Views\Role\cesi.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

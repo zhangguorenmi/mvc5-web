@@ -1,0 +1,36 @@
+
+
+C#子类重写父类函数的两种方法 https://www.cnblogs.com/zhaogaojian/p/8658377.html
+
+================================================================================================
+（1）使用Virtual关键字Override从写
+
+父类子类代码如下，不能修改public 为其它权限
+
+public virtual void Clear()
+{
+    UpdateView();
+}
+
+public override void Clear()
+{
+    base.Clear();
+
+}
+ 
+ --------------------------------------------------------------------------------------
+（2）使用new覆盖
+
+可以从写public 为private
+
+ 
+public  void Clear()
+{
+    UpdateView();
+}
+
+private new void Clear()
+{
+    base.Clear();
+
+}

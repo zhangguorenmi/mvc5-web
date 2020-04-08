@@ -6,11 +6,31 @@ using System.Threading.Tasks;
 using MVC2020.Core.GeneralTypes;
 using MVC2020.Core.Model;
 
+
+
+//向下封装一层  增加返回结果  增加判断条件逻辑（因类有区别 不能通用）
+//（如ADD  是否有重复检测完在添加）
 namespace MVC2020.Core
 {
 
      public class AdministratorManager : BaseManager<Administrator>
-    {
+    { 
+
+
+         /// cesi测试测试测试
+         public string FindListcesi()
+         {
+             //Expression<Func<T,bool>> where
+             IQueryable<Administrator> ik = base.Repository.FindList(Administrator => Administrator.AdministratorID>0);
+             
+             //后来修改了分页的实现方法
+             //int aa = 3;//注意包含指针  不然报错
+             //IQueryable<Administrator> ikk = base.Repository.FindPageList<int>(1,1,out aa,Administrator => Administrator.AdministratorID,true);
+             return "11";
+         }
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
         /// <summary>
         /// 添加---重写并做条件验证
         /// </summary>
@@ -25,6 +45,7 @@ namespace MVC2020.Core
                 _resp.Message = "帐号已存在";
             }
             else _resp = base.Add(admin);
+
             return _resp;
         }
 

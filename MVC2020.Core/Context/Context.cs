@@ -21,8 +21,15 @@ namespace MVC2020.Core.Context
         /// </summary>
         public DbSet<Administrator> administrators { get; set; }
 
-        ////角色模型
-        //public DbSet<Role> Roles { get; set; }
+        /// <summary>
+        /// 角色模型
+        /// </summary>
+        public DbSet<Role> Roles { get; set; }
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 
         public Context( )
             : base("DefaultConnection")
