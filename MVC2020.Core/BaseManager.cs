@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using MVC2020.Core.Context;
@@ -151,6 +152,33 @@ namespace MVC2020.Core
         {
             paging.Items = Repository.FindPageList(paging.PageSize, paging.PageIndex, out paging.TotalNumber).ToList();
             return paging;
+        }
+
+
+        /// <summary>
+        /// 查找分页数据  paixu
+        /// </summary>
+        /// <param name="paging">分页数据</param>
+        /// <returns>分页数据</returns>
+        public IQueryable<T> FindPageList(Expression<Func<T,bool>> where)
+        {
+
+
+            IQueryable<T> dd1 = Repository.FindPageListcesi(where);
+            return dd1;
+
+
+            OrderParam[]  ddd=  new OrderParam[1]; 
+            OrderParam ork = new OrderParam();
+            ork.PropertyName="UserID";
+            ork.Method=OrderMethod.ASC;
+
+            ddd[0] =ork;
+
+            int aa = 3;
+            IQueryable<T> dd = Repository.FindPageList(1,1,out aa,where,ddd);//Repository  此类没有继承仓促
+
+            return  dd;
         }
 
         /// <summary>

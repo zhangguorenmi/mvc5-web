@@ -150,6 +150,21 @@ MVC5 网站开发之六 管理员 2、添加、删除、重置密码、修改密码、列表浏览（https://ww
 
 ============================================================================================================
 
+2020-4-9  1：39
 
+修改：分页函数 FindPageList 和 FindList （都涉及到分页问题）
+
+FindPageList<TKey>(int pageSize, int pageIndex, out int totalNumber, Expression<Func<T, bool>> where, Expression<Func<T, TKey>> order, bool asc)
+FindPageList      (int pageSize, int pageIndex, out int totalNumber, Expression<Func<T, bool>> where, OrderParam[] orderParams) 
+      
+
+	  下一步：修改用户类添加角色字段
+
+
+============================================================================================================
 
    
+2020-04-12 6:48  分页遇到严重问题
+
+·SKIN
+·[Extent1].[UserID] 字符串错误

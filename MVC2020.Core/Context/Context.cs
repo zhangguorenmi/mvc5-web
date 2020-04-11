@@ -26,8 +26,12 @@ namespace MVC2020.Core.Context
         /// </summary>
         public DbSet<Role> Roles { get; set; }
 
+        /// <summary>
+        /// 用户模型
+        /// </summary>
+        public DbSet<User> User { get; set; }
 
-
+ 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 

@@ -199,8 +199,59 @@ namespace MVC2020.DataLibrary
 
         #region FindPageList
 
+        ///// <summary>
+        ///// 分页列表-原始（安装LinqKit）
+        ///// </summary>
+        ///// <param name="pagingUser">分页数据</param>
+        ///// <param name="roleID">角色ID</param>
+        ///// <param name="username">用户名</param>
+        ///// <param name="name">名称</param>
+        ///// <param name="sex">性别</param>
+        ///// <param name="email">Email</param>
+        ///// <param name="order">排序【null（默认）-ID降序，0-ID升序，1-ID降序，2-注册时间降序，3-注册时间升序，4-最后登录时间升序，5-最后登录时间降序】</param>
+        ///// <returns></returns>
+        //public Paging<User> FindPageList(Paging<User> pagingUser,int? roleID,string username,string name,int? sex,string email,int? order)
+        //{
+        //    //查询表达式
+        //    var _where = PredicateBuilder.True<User>();
+        //    if(roleID != null && roleID > 0) _where = _where.And(u => u.RoleID == roleID);
+        //    if(!string.IsNullOrEmpty(username)) _where = _where.And(u => u.Username.Contains(username));
+        //    if(!string.IsNullOrEmpty(name)) _where = _where.And(u => u.Name.Contains(name));
+        //    if(sex != null && sex >= 0 && sex <= 2) _where = _where.And(u => u.Sex == sex);
+        //    if(!string.IsNullOrEmpty(email)) _where = _where.And(u => u.Email.Contains(email));
+        //    //排序
+        //    OrderParam _orderParam;
+        //    switch(order)
+        //    {
+        //        case 0://ID升序
+        //            _orderParam = new OrderParam() { PropertyName = "UserID",Method = OrderMethod.ASC };
+        //            break;
+        //        case 1://ID降序
+        //            _orderParam = new OrderParam() { PropertyName = "UserID",Method = OrderMethod.DESC };
+        //            break;
+        //        case 2://注册时间降序
+        //            _orderParam = new OrderParam() { PropertyName = "RegTime",Method = OrderMethod.ASC };
+        //            break;
+        //        case 3://注册时间升序
+        //            _orderParam = new OrderParam() { PropertyName = "RegTime",Method = OrderMethod.DESC };
+        //            break;
+        //        case 4://最后登录时间升序
+        //            _orderParam = new OrderParam() { PropertyName = "LastLoginTime",Method = OrderMethod.ASC };
+        //            break;
+        //        case 5://最后登录时间降序
+        //            _orderParam = new OrderParam() { PropertyName = "LastLoginTime",Method = OrderMethod.DESC };
+        //            break;
+        //        default://ID降序
+        //            _orderParam = new OrderParam() { PropertyName = "UserID",Method = OrderMethod.DESC };
+        //            break;
+        //    }
+        //    pagingUser.Items = Repository.FindPageList(pagingUser.PageSize,pagingUser.PageIndex,out pagingUser.TotalNumber,_where.Expand(),_orderParam).ToList();
+        //    return pagingUser;
+        //}
+
+
         /// <summary>
-        /// 查找分页列表【表的全部数据】
+        /// 查找分页列表-未筛选【表的全部数据】
         /// </summary>
         /// <param name="pageSize">每页记录数。必须大于1</param>
         /// <param name="pageIndex">页码。首页从1开始，页码必须大于1</param>
@@ -213,13 +264,12 @@ namespace MVC2020.DataLibrary
         }
 
         /// <summary>
-        /// 查找分页列表【表的全部数据-排序-顺序】
+        /// 查找分页列表-未筛选【表的全部数据-排序-顺序】
         /// </summary>
         /// <param name="pageSize">每页记录数。必须大于1</param>
         /// <param name="pageIndex">页码。首页从1开始，页码必须大于1</param>
         /// <param name="totalNumber">总记录数</param>
-        /// <param name="order">排序键</param>
-        /// <param name="asc">是否正序</param>
+        /// <param name="orderParam">排序键和顺序集合</param>
         /// <returns></returns>
         public IQueryable<T> FindPageList(int pageSize,int pageIndex,out int totalNumber,OrderParam orderParam)
         {
@@ -227,7 +277,7 @@ namespace MVC2020.DataLibrary
         }
 
         /// <summary>
-        /// 查找分页列表【查询表达式】
+        /// 主用-不排序-查找分页列表【查询表达式】
         /// </summary>
         /// <param name="pageSize">每页记录数。必须大于1</param>
         /// <param name="pageIndex">页码。首页从1开始，页码必须大于1</param>
@@ -240,13 +290,13 @@ namespace MVC2020.DataLibrary
         }
 
         /// <summary>
-        /// 查找分页列表【查询表达式-排序】
+        /// 主用-排序-查找分页列表【查询表达式-排序】
         /// </summary>
         /// <param name="pageSize">每页记录数。</param>
         /// <param name="pageIndex">页码。首页从1开始</param>
         /// <param name="totalNumber">总记录数</param>
         /// <param name="where">查询表达式</param>
-        /// <param name="orderParam">排序【null-不设置】</param>
+        /// <param name="orderParam">排序键和顺序集合【null-不设置】</param>
         /// <returns></returns>
         public IQueryable<T> FindPageList(int pageSize,int pageIndex,out int totalNumber,Expression<Func<T,bool>> where,OrderParam orderParam)
         {
@@ -256,23 +306,32 @@ namespace MVC2020.DataLibrary
         }
 
         /// <summary>
-        /// ※ 查找分页列表【主要】
+        /// 查询测试////////////////////////////////////////////////////
+        /// </summary>
+        /// <param name="where"></param>
+        /// <returns></returns>
+        public IQueryable<T> FindPageListcesi(Expression<Func<T,bool>> where)
+        {
+
+            IQueryable<T> _list = DbContext.Set<T>().Where(where);
+            return _list;
+        }
+        /// <summary>
+        /// 查找分页列表
         /// </summary>
         /// <param name="pageSize">每页记录数。</param>
         /// <param name="pageIndex">页码。首页从1开始</param>
         /// <param name="totalNumber">总记录数</param>
         /// <param name="where">查询表达式</param>
         /// <param name="orderParams">排序【null-不设置】</param>
-        public IQueryable<T> FindPageList(int pageSize,int pageIndex,out int totalNumber,Expression<Func<T,bool>> where,OrderParam[] orderParams)//【使用数组，是考虑到多级排序的情况】
+        public IQueryable<T> FindPageList(int pageSize,int pageIndex,out int totalNumber,Expression<Func<T,bool>> where,OrderParam[] orderParams)
         {
-            if(pageIndex < 1) pageIndex = 1;//页码
-            if(pageSize < 1) pageSize = 10;//每页记录数
+            if(pageIndex < 1) pageIndex = 1;
+            if(pageSize < 1) pageSize = 10;
+            IQueryable<T> _list = DbContext.Set<T>().Where(where);
+          //  totalNumber = 3;
+           // return _list;
 
-            IQueryable<T> _list = DbContext.Set<T>().Where(where);//条件选择数据
-
-            totalNumber = _list.Count();//总记录数
-
-            //数组？
             var _orderParames = Expression.Parameter(typeof(T),"o");
             if(orderParams != null && orderParams.Length > 0)
             {
@@ -284,14 +343,25 @@ namespace MVC2020.DataLibrary
                     var _propertyAccess = Expression.MakeMemberAccess(_orderParames,_property);
                     var _orderByExp = Expression.Lambda(_propertyAccess,_orderParames);
                     string _orderName = orderParams[i].Method == OrderMethod.ASC ? "OrderBy" : "OrderByDescending";
-                    MethodCallExpression resultExp = Expression.Call(typeof(Queryable),_orderName,new Type[] { typeof(T),_property.PropertyType },_list.Expression,Expression.Quote(_orderByExp));
-                    _list = _list.Provider.CreateQuery<T>(resultExp);
+
+                    MethodCallExpression resultExp = Expression.Call
+                        (
+                        typeof(Queryable),
+                        _orderName,
+                        new Type[] { typeof(T),_property.PropertyType },
+                        _list.Expression,Expression.Quote(_orderByExp)
+
+                        );
+
+
+                        _list = _list.Provider.CreateQuery<T>(resultExp);
+
                 }
             }
+            totalNumber = _list.Count();
 
-           // totalNumber = _list.Count();//总记录数
-
-            return _list.Skip((pageIndex - 1) * pageIndex).Take(pageSize);
+            //return _list; return _list.Skip((pageIndex - 1) * pageIndex).Take(pageSize);
+             return _list.Skip((pageIndex - 1) * pageIndex).Take(2);//分页问题在这里（错误：必须在调用“Skip”方法之前调用方法“OrderBy）
         }
 
         #endregion

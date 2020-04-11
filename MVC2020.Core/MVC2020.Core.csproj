@@ -30,7 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Users\zhangguorenmi\Documents\Visual Studio 2013\Projects\ASP.NET MVC5 网站开发之Ninesky - 项目框架\Ninesky.DataLibrary\bin\Debug\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="System" />
@@ -60,15 +61,20 @@
     <Compile Include="Model\0模型类.cs" />
     <Compile Include="Model\Administrator.cs" />
     <Compile Include="Model\Role.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="RoleManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GeneralTypes\0项目通用类型的定义.cs" />
+    <Compile Include="UserManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MVC2020.DataLibrary\MVC2020.DataLibrary.csproj">
       <Project>{61a689c6-1a4b-4ef3-8016-810761bfecec}</Project>
       <Name>MVC2020.DataLibrary</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -14,3 +14,4 @@ D:\ML\mvc5-web\MVC2020.Core\bin\Debug\MVC2020.DataLibrary.pdb
 D:\ML\mvc5-web\MVC2020.Core\obj\Debug\MVC2020.Core.csprojResolveAssemblyReference.cache
 D:\ML\mvc5-web\MVC2020.Core\obj\Debug\MVC2020.Core.dll
 D:\ML\mvc5-web\MVC2020.Core\obj\Debug\MVC2020.Core.pdb
+D:\ML\mvc5-web\MVC2020.Core\bin\Debug\MVC2020.Core.dll.config
