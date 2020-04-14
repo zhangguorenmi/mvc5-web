@@ -29,39 +29,51 @@ namespace MVC2020.Web.Areas.Member.Controllers
         //int?可以为空ActionResult JsonResult
         public ActionResult PageListJson(int? roleID,string username,string name,int? sex,string email,int? pageNumber,int? pageSize,int? order)
         {
-            Paging<Administrator> pag6 = new Paging<Administrator>();
-            AdministratorManager userManager22 = new AdministratorManager();//添加变量
 
-            //pag6.PageIndex = 1;
-            //pag6.PageSize = 1;
-            //pag6.TotalNumber = 3;
-            //var _paging11 = userManager22.FindPageList(pag6);
+            //裸测通过
+            //1.类没问题
+            //2.前段接收没问题
+            //3.返回数据没问题
+            //User perA = new User() { Name = "李四",Username = "男22" };
+            //User perB = new User() { Name = "张三",Username = "女22" };
+            //List<User> list = new List<User>();
+            //list.Add(perA);
+            //list.Add(perB);
+            //JsonResult jsonResult = Json(list);
+            //return jsonResult;
+
+
+
+
+            Paging<User> pag6 = new Paging<User>();
+            UserManager userManager22 = new UserManager();//添加变量
+
+            pag6.PageIndex = 1;
+            pag6.PageSize = 1;
+            pag6.TotalNumber = 3;
+            var _paging11 = userManager22.FindPageList(pag6);
 
             //ActionResult aa1 = Json(new { total = _paging11.TotalNumber,rows = _paging11.Items });
 
             ///////////////////////////////////////////////////////////////////////////////////////////
 
-            if(pageNumber != null && pageNumber > 0) paging.PageIndex = (int)pageNumber;//当前页
-            if(pageSize != null && pageSize > 0)     paging.PageSize = (int)pageSize;//每页数
-            paging.TotalNumber = 3;
+            //if(pageNumber != null && pageNumber > 0) paging.PageIndex = (int)pageNumber;//当前页
+            //if(pageSize != null && pageSize > 0) paging.PageSize = (int)pageSize;//每页数
+            //paging.TotalNumber = 3;
 
-              
 
-            var _paging = userManager.FindPageList(u => u.UserID>0);
 
-           
+           //IQueryable<User> tt = userManager.FindPageList(u => u.UserID > 0);
+           // var _paging11 = userManager.FindPageList(u => u.UserID > 0);
 
-            return Json(_paging);
+           ActionResult aa1 = Json(new { total = _paging11.TotalNumber,rows = _paging11.Items });
+           return aa1;
+
+
+
         }
 
 
-        public ActionResult PageListJson(int? roleID,string username,string name,string email,int? pageNumber,int? pageSize,int? order)
-        {
-            if(pageNumber != null && pageNumber > 0) paging.PageIndex = (int)pageNumber;//当前页
-            if(pageSize != null && pageSize > 0) paging.PageSize = (int)pageSize;//每页数
-            paging.TotalNumber = 3;
-            var _paging = userManager.FindPageList(paging);
-            return Json(new { total = _paging.TotalNumber,rows = _paging.Items });
-        }
+      
     }
 }

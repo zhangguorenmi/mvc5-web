@@ -36,19 +36,30 @@
                 sidePagination: "server",
                 pageList: "[5, 10, 20, 50, 100]",
                 method: "post",
-                url: "@Url.Action("PageListJson")",
+                url: "@Url.Action("PageListJson","User")",
                 columns: [
-                    { title: "ID", field: "UserID" },
-                    { title: "角色", field: "RoleID" },
+                    //{ title: "ID", field: "UserID" },
+                    //{ title: "角色", field: "RoleID" },
                     { title: "用户名", field: "Username" },
                     { title: "名称", field: "Name", formatter: function (value, row, index) { return "<a href='@Url.Action("Modify", "User")/" + row.UserID + "'>" + value + "</a>" } },
-                    { title: "性别", field: "Sex" },
-                    { title: "Email", field: "Email", visible: false },
-                    { title: "最后登录时间", field: "LastLoginTime" },
-                    { title: "最后登录IP", field: "LastLoginIP", visible: false },
-                    { title: "注册时间", field: "RegTime", visible: false },
-                    { title: "操作", field: "UserID", formatter: function (value) { return "<a class='btn btn-sm btn-danger' data-operation='deleteuser' data-value='" + value + "'>删除</a>" } }
+                    //{ title: "性别", field: "Sex" },
+                    //{ title: "Email", field: "Email", visible: false },
+                    //{ title: "最后登录时间", field: "LastLoginTime" },
+                    //{ title: "最后登录IP", field: "LastLoginIP", visible: false },
+                    //{ title: "注册时间", field: "RegTime", visible: false },
+                    //{ title: "操作", field: "UserID", formatter: function (value) { return "<a class='btn btn-sm btn-danger' data-operation='deleteuser' data-value='" + value + "'>删除</a>" } }
                 ],
+               
+                //responseHandler: function (res) {
+                //    alert("您点击了取消 " + res.columns + res.showColumns)
+                //    //$("#invite_count").html(res.count);//count  后端返回的非total、rows数据
+                //    //$("#invite_month").html(res.month);
+                //    //return{                            //return bootstrap-table能处理的数据格式
+                //    //    "total":res.total,
+                //    //    "rows":res.rows
+                //    //}
+                //},
+
                 onLoadSuccess: function () {
                     //删除按钮
                     //删除按钮结束

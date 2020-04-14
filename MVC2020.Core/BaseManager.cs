@@ -164,8 +164,8 @@ namespace MVC2020.Core
         {
 
 
-            IQueryable<T> dd1 = Repository.FindPageListcesi(where);
-            return dd1;
+            //IQueryable<T> dd1 = Repository.FindPageListcesi(where);
+            //return dd1;
 
 
             OrderParam[]  ddd=  new OrderParam[1]; 

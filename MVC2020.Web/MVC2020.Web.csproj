@@ -167,6 +167,7 @@
     <Compile Include="Areas\Member\MemberAreaRegistration.cs" />
     <Compile Include="Areas\Member\Models\AddAdminViewModel.cs" />
     <Compile Include="Areas\Member\Models\LoginViewModel.cs" />
+    <Compile Include="Areas\Member\Views\User\nnl.cs" />
     <Compile Include="Areas\Setup\Controllers\HomeController.cs" />
     <Compile Include="Areas\Setup\SetupAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
