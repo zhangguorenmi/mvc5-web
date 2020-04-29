@@ -12,19 +12,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "问题集", "问题集", "{ED1C9906-7DAA-4B6D-9184-BACAD7E45E6E}"
 	ProjectSection(SolutionItems) = preProject
 		ASP.NET MVC路径引用总结.txt = ASP.NET MVC路径引用总结.txt
-		EF中常用的三种数据修改方式.txt = EF中常用的三种数据修改方式.txt
-		ModelState.AddModelError使用.txt = ModelState.AddModelError使用.txt
 		Route路由.txt = Route路由.txt
 		使用git bash上传文件到github仓库.txt = 使用git bash上传文件到github仓库.txt
-		抽象父类（抽象方法 虚方法）.txt = 抽象父类（抽象方法 虚方法）.txt
-		抽象类和接口的区别以及使用场景.txt = 抽象类和接口的区别以及使用场景.txt
-		新- js中的$ .txt = 新- js中的$ .txt
-		新- 函数和弹框Dialog.txt = 新- 函数和弹框Dialog.txt
-		新-字体图标.txt = 新-字体图标.txt
-		新-布局@RenderSection 用法.txt = 新-布局@RenderSection 用法.txt
 		进度条.txt = 进度条.txt
-		重写父类函数的两种方法.txt = 重写父类函数的两种方法.txt
-		重载和方法重写的区别.txt = 重载和方法重写的区别.txt
 		？无法打开区域默认网页.txt = ？无法打开区域默认网页.txt
 	EndProjectSection
 EndProject
@@ -35,9 +25,37 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bootstrap 插件及语法",
 		jQuery中$.each.txt = jQuery中$.each.txt
 		JS中回调函数(callback)理解.txt = JS中回调函数(callback)理解.txt
 		List.txt = List.txt
+		新- 函数和弹框Dialog.txt = 新- 函数和弹框Dialog.txt
+		新-字体图标.txt = 新-字体图标.txt
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "测试", "测试\测试.csproj", "{E6808507-2822-46D7-81CD-A494120A7E91}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MVC中的新知识点", "MVC中的新知识点", "{C92A1FBE-1BC1-40D1-9B33-72786888264A}"
+	ProjectSection(SolutionItems) = preProject
+		新-布局@RenderSection 用法.txt = 新-布局@RenderSection 用法.txt
+		集合IQueryable和IEnumerable的区别.txt = 集合IQueryable和IEnumerable的区别.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "C中的复习知识点", "C中的复习知识点", "{352D6DEE-9FBA-45AD-8870-E18F275E1E86}"
+	ProjectSection(SolutionItems) = preProject
+		抽象父类（抽象方法 虚方法）.txt = 抽象父类（抽象方法 虚方法）.txt
+		抽象类和接口的区别以及使用场景.txt = 抽象类和接口的区别以及使用场景.txt
+		重写父类函数的两种方法.txt = 重写父类函数的两种方法.txt
+		重载和方法重写的区别.txt = 重载和方法重写的区别.txt
+		集合IQueryable和IEnumerable的区别.txt = 集合IQueryable和IEnumerable的区别.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JS和JQ和异步", "JS和JQ和异步", "{CB9C1BF6-A05E-41A0-95D5-DBF1C7B444C7}"
+	ProjectSection(SolutionItems) = preProject
+		新- js中的$ .txt = 新- js中的$ .txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EF操作", "EF操作", "{6433BBA9-A93B-4092-8C1B-8EFA8105EB10}"
+	ProjectSection(SolutionItems) = preProject
+		EF中常用的三种数据修改方式.txt = EF中常用的三种数据修改方式.txt
+		ModelState.AddModelError使用.txt = ModelState.AddModelError使用.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +85,10 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{183EB7FE-0F05-4D29-A3C3-BAAC7D51CA2E} = {ED1C9906-7DAA-4B6D-9184-BACAD7E45E6E}
+		{C92A1FBE-1BC1-40D1-9B33-72786888264A} = {ED1C9906-7DAA-4B6D-9184-BACAD7E45E6E}
+		{352D6DEE-9FBA-45AD-8870-E18F275E1E86} = {ED1C9906-7DAA-4B6D-9184-BACAD7E45E6E}
+		{CB9C1BF6-A05E-41A0-95D5-DBF1C7B444C7} = {ED1C9906-7DAA-4B6D-9184-BACAD7E45E6E}
+		{6433BBA9-A93B-4092-8C1B-8EFA8105EB10} = {ED1C9906-7DAA-4B6D-9184-BACAD7E45E6E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		VisualSVNWorkingCopyRoot = .

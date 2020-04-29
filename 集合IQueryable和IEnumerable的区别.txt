@@ -1,0 +1,19 @@
+
+
+C#中IQueryable和IEnumerable的区别
+
+https://blog.csdn.net/weixin_30417487/article/details/94896233?depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-4&utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-4
+
+
+
+1. 要明白一点，IQueryable接口是继承自IEnumerable的接口的.
+2. IQueryable中有表达式树, 这可以看作是它的一个优势。所以，使用IQueryable操作时,比如对数据的过滤，排序等操作, 这些都会先缓存到表达式树中. 当对数据库操作真正发生时，它才会将表达式树执行来获取数据。
+
+
+ 这也就是说，比如选择top 2两行数据, 它会先在表达式树中缓存这个过滤取top 2的操作。待到操作数据库时，它就会在数据库中筛选top 2数据。 =》 IQueryable 有延时加载机制， 它直接从数据库中筛选数据.
+
+
+ 3. IEnumerable, 它对数据进行操作时，和IQueryable不同，它会事先把所有的数据从数据库获取，放到内存中。然后，在内存中对这些数据进行筛选操作,包括过滤，排序等.  => IEnumerable 在内存中对数据进行筛选
+
+
+

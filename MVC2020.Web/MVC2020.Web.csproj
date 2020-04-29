@@ -47,6 +47,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="LinqKit">
+      <HintPath>..\packages\LinqKit.1.1.17\lib\net45\LinqKit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -301,6 +304,10 @@
     <ProjectReference Include="..\MVC2020.Core\MVC2020.Core.csproj">
       <Project>{999475e2-8784-41f3-9282-1bc15a508731}</Project>
       <Name>MVC2020.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MVC2020.DataLibrary\MVC2020.DataLibrary.csproj">
+      <Project>{61a689c6-1a4b-4ef3-8016-810761bfecec}</Project>
+      <Name>MVC2020.DataLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

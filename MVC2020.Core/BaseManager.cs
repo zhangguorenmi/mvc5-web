@@ -24,7 +24,7 @@ namespace MVC2020.Core
         /// <summary>
         /// 数据仓储类
         /// </summary>
-        protected Repository<T> Repository;
+        public Repository<T> Repository;
 
         /// <summary>
         /// 默认构造函数==  程序内赋值调用  有参参数
@@ -43,7 +43,15 @@ namespace MVC2020.Core
             Repository = new Repository<T>(dbContext);
         }
 
+        ////报错  无效参数
+        ////Paging<User> pagingUser = new Paging<User>();
+        //public bool FindPageList(int pageSize,int pageIndex,out int totalNumber,Expression<Func<T,bool>> where11,MVC2020.Core.GeneralTypes.OrderParam[] orderParams) 
+        //{
 
+        //    pagingUser.Items = Repository.FindPageList(pageSize,pageIndex,out totalNumber,where11,orderParams);
+        //    return true;
+ 
+        //}
 
         /// <summary>
         /// 添加
@@ -155,31 +163,31 @@ namespace MVC2020.Core
         }
 
 
-        /// <summary>
-        /// 查找分页数据  paixu
-        /// </summary>
-        /// <param name="paging">分页数据</param>
-        /// <returns>分页数据</returns>
-        public IQueryable<T> FindPageList(Expression<Func<T,bool>> where)
-        {
+        ///// <summary>
+        ///// 查找分页数据  paixu
+        ///// </summary>
+        ///// <param name="paging">分页数据</param>
+        ///// <returns>分页数据</returns>
+        //public IQueryable<T> FindPageList(Expression<Func<T,bool>> where)
+        //{
 
 
-            //IQueryable<T> dd1 = Repository.FindPageListcesi(where);
-            //return dd1;
+        //    //IQueryable<T> dd1 = Repository.FindPageListcesi(where);
+        //    //return dd1;
 
 
-            OrderParam[]  ddd=  new OrderParam[1]; 
-            OrderParam ork = new OrderParam();
-            ork.PropertyName="UserID";
-            ork.Method=OrderMethod.ASC;
+        //    OrderParam[]  ddd=  new OrderParam[1]; 
+        //    OrderParam ork = new OrderParam();
+        //    ork.PropertyName="UserID";
+        //    ork.Method=OrderMethod.ASC;
 
-            ddd[0] =ork;
+        //    ddd[0] =ork;
 
-            int aa = 3;
-            IQueryable<T> dd = Repository.FindPageList(1,1,out aa,where,ddd);//Repository  此类没有继承仓促
+        //    int aa = 3;
+        //    IQueryable<T> dd = Repository.FindPageList(1,1,out aa,where,ddd);//Repository  此类没有继承仓促
 
-            return  dd;
-        }
+        //    return  dd;
+        //}
 
         /// <summary>
         /// 总记录数
@@ -188,6 +196,20 @@ namespace MVC2020.Core
         public virtual int Count()
         {
             return Repository.Count();
+        }
+
+
+
+
+        /// <summary>
+        /// cesi--List
+        /// </summary>
+        /// <param name="where"></param>
+        /// <returns></returns>
+        public IQueryable<T> cesi66(Expression<Func<T,bool>> where)
+        {
+            return Repository.GetEntity(where,1,2,3,"message","UserID",true);
+            
         }
     
 

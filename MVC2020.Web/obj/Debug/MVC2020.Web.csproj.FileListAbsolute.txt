@@ -154,3 +154,5 @@ D:\ML\mvc5-web\MVC2020.Web\bin\zh-Hans\Microsoft.Owin.Security.MicrosoftAccount.
 D:\ML\mvc5-web\MVC2020.Web\obj\Debug\MVC2020.Web.csprojResolveAssemblyReference.cache
 D:\ML\mvc5-web\MVC2020.Web\obj\Debug\MVC2020.Web.dll
 D:\ML\mvc5-web\MVC2020.Web\obj\Debug\MVC2020.Web.pdb
+D:\ML\mvc5-web\MVC2020.Web\bin\LinqKit.dll
+D:\ML\mvc5-web\MVC2020.Web\bin\LinqKit.xml

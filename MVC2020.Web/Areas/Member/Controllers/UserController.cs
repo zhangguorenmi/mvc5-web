@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Web;
 using System.Web.Mvc;
+using LinqKit;
 using MVC2020.Core;
 using MVC2020.Core.GeneralFunction;
 using MVC2020.Core.GeneralTypes;
@@ -16,18 +18,25 @@ namespace MVC2020.Web.Areas.Member.Controllers
     public class UserController : Controller
     {
         private UserManager userManager = new UserManager();//添加变量
-        Paging<User> paging = new Paging<User>();  
+
+        Paging<User> paging = new Paging<User>();
+
+
+
 
         [AdminAuthorize]
         // GET: Member/User
-        public ActionResult Index()
+        public ActionResult Index( )
         {
             return View();
         }
 
+      
+
         [HttpPost]
         //int?可以为空ActionResult JsonResult
-        public ActionResult PageListJson(int? roleID,string username,string name,int? sex,string email,int? pageNumber,int? pageSize,int? order)
+        //int? roleID,string username,string name,int? sex,string email,int? pageNumber,int? pageSize,int? order
+        public JsonResult cesiPageListJson( )
         {
 
             //裸测通过
@@ -45,35 +54,67 @@ namespace MVC2020.Web.Areas.Member.Controllers
 
 
 
-            Paging<User> pag6 = new Paging<User>();
-            UserManager userManager22 = new UserManager();//添加变量
+            ////Paging<User> pag6 = new Paging<User>();
+            ////UserManager userManager22 = new UserManager();//添加变量
 
-            pag6.PageIndex = 1;
-            pag6.PageSize = 1;
-            pag6.TotalNumber = 3;
-            var _paging11 = userManager22.FindPageList(pag6);
+            //// pag6.PageIndex = 1;
+            //// pag6.PageSize = 1;
+            //// pag6.TotalNumber = 3;
+            //// var _paging11 = userManager22.FindPageList(pag6);
 
-            //ActionResult aa1 = Json(new { total = _paging11.TotalNumber,rows = _paging11.Items });
+            //// //ActionResult aa1 = Json(new { total = _paging11.TotalNumber,rows = _paging11.Items });
 
-            ///////////////////////////////////////////////////////////////////////////////////////////
+            //// ///////////////////////////////////////////////////////////////////////////////////////////
 
-            //if(pageNumber != null && pageNumber > 0) paging.PageIndex = (int)pageNumber;//当前页
-            //if(pageSize != null && pageSize > 0) paging.PageSize = (int)pageSize;//每页数
-            //paging.TotalNumber = 3;
-
-
-
-           //IQueryable<User> tt = userManager.FindPageList(u => u.UserID > 0);
-           // var _paging11 = userManager.FindPageList(u => u.UserID > 0);
-
-           ActionResult aa1 = Json(new { total = _paging11.TotalNumber,rows = _paging11.Items });
-           return aa1;
+            //// //if(pageNumber != null && pageNumber > 0) paging.PageIndex = (int)pageNumber;//当前页
+            //// //if(pageSize != null && pageSize > 0) paging.PageSize = (int)pageSize;//每页数
+            //// //paging.TotalNumber = 3;
 
 
 
+            //////IQueryable<User> tt = userManager.FindPageList(u => u.UserID > 0);
+           
+            ////// var _paging11 = userManager.FindPageList(u => u.UserID > 0);
+
+            ////ActionResult aa1 = Json(new { total = _paging11.TotalNumber,rows = _paging11.Items });
+            ////return aa1;
+
+            //001
+            //==================================================================================================
+
+                ////20200423 测试成功  用ToList();   立即查询
+
+                //UserManager userManager22 = new UserManager();//添加变量
+                ////List<User> uis = userManager22.cesi66(u => u.UserID > 0);
+                //IQueryable<User> uis = userManager22.cesi66(u => u.UserID > 0);
+                ////int aa = uis.Count();//立即查询  不要延迟查询  失败
+
+                //List<User> uis1 = uis.ToList(); 
+            
+                //int aa = uis.Count();
+
+                ////ActionResult aa111 = Json(uis);
+                //return Json(uis1);
+
+            //====================================================================================================
+
+
+            ///002
+            //======================================================================================================
+
+                ////2020-04-23 23:00   仓储中的FindPageList测试成功  查出来的是SQL语句  这里需要转换一下就可以执行语句 获得结果了
+                //IQueryable<User> tt = userManager.FindPageList(u => u.UserID > 0);
+                //List<User> uis1 = tt.ToList();
+                //return Json(uis1);
+
+            //===============================================================================================================
+
+
+
+            return Json(null);
         }
 
 
-      
+
     }
 }
