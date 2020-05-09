@@ -33,7 +33,7 @@ namespace MVC2020.Core.GeneralTypes
         public Paging( )
         {
             PageIndex = 1;
-            PageSize = 20;
+            PageSize = 6;
         }
     }
 }

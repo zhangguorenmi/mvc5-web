@@ -4,9 +4,11 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using MVC2020.Core.GeneralTypes;
+using MVC2020.DataLibrary;
 using MVC2020.Core.Model;
 using LinqKit;
+using MVC2020.Core.GeneralTypes;
+using System.Web.Mvc;
 
 namespace MVC2020.Core
 {
@@ -24,7 +26,7 @@ namespace MVC2020.Core
 
         //    pagingUser.Items= base.Repository.FindPageList(pageSize,pageIndex,out int totalNumber,where,orderParams);
         //    return true;
- 
+
         //}
 
         /// <summary>
@@ -75,19 +77,8 @@ namespace MVC2020.Core
 
 
 
-        ///// <summary>
-        ///// cesi
-        ///// </summary>
-        ///// <param name="user"></param>
-        //public List<User> Usercesi66(Expression<Func<User,bool>> where)
-        //{
+ 
 
-        //    List<User> uu = cesi66(where);
-
-
-        //        return uu;
-         
-        //}
 
         /// <summary>
         /// 分页列表
@@ -136,8 +127,11 @@ namespace MVC2020.Core
                     break;
             }
 
+
+
             // Repository re - new Repository();
-            pagingUser.Items = Repository.FindPageList(pagingUser.PageSize,pagingUser.PageIndex,out pagingUser.TotalNumber,_where.Expand(),_orderParam).ToList();
+            //List<User> _list1 = Repository.FindPageList(pagingUser.PageSize,pagingUser.PageIndex,out  pagingUser.TotalNumber,_where.Expand(),_orderParam).ToList();
+            pagingUser.Items = Repository.FindPageList(pagingUser.PageSize,pagingUser.PageIndex,out  pagingUser.TotalNumber,_where.Expand(),_orderParam).ToList();
             return pagingUser;
         }
 

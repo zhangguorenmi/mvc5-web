@@ -1,0 +1,21 @@
+
+https://www.landui.com/help/show-4417.html
+
+
+
+
+站点(site)
+
+一个站点包含一个或者多个application和一个或者多个虚拟目录。我们可以通过对site进行不同的绑定以用不同的方式对site进行访问。这里的“绑定”包含两个方面，一个是绑定的协议，另一个就是绑定信息。绑定协议用于指定通过什么协议去和该site进行通信。IIS7+中，对一个site可以的协议包括http,https,net.tcp,net.pipe,net.msmq,net.formatname这几种。当然，对于一个网站，最常用的就是http和https。而绑定信息则定义了通信的基本信息，比如IP地址，通信端口，站点的一些头部信息(header)。正如前面说到的，可以为一个site添加多种绑定，只需要在IIS中对某个site进行“编辑绑定”操作即可。
+
+应用程序(application)
+
+application是为一个site提供功能的基本单位，例如一个购物站点可以包含两个application：一个负责呈现商品，给消费者去选购，并放入购物车，而另一个appliation则可以专注于用户的登录以及支付业务。当一个site只有一个application时候，这个application也就是root application或者default application，代表着这个site本身，在applicationHost中的“<application path=”/” >”里面，path=”/”就表示该application是该site的根应用程序。　
+
+　application运行在IIS中的应用程序池中，以app domain隔离。application可以运行在IIS中任意一个应用程序池中，而不一定要运行在这个application所在的site的应用程序池中，但对于使用托管代码开发的application（例如一个asp.net网站）必须运行在运行在.NET之上的应用程序池。可以在IIS中对应用程序池进行设置，包括设置.NET版本(或者是非托管环境)，以及设置管道模式等操作。
+
+虚拟目录(virtual directory)
+
+一个虚拟目录就是一个site（实际上是application）上的对一个本地计算机或者远程计算机上一个物理目录路径的一个映射名称。一个application可以拥有至少一个虚拟目录。在applicationHost中的“<virtualDirectorypath=”/” >”里面，path=”/”就表示该virtual directory是该application(或者该site)的根虚拟目录。
+
+当设置一个虚拟路径映射到一个物理路径后，这个物理路径中的目录名称就会变成这个site（或者application）的url的一部分。一个site(application)可以拥有多个虚拟目录，例如，一个site中的虚拟目录”www.site.com/script”映射到本地计算机上该站点中script文件夹，而”www.site.com/image”则映射到远程图片服务器上的一个“image”文件夹。IIS7+利用虚拟目录映射的目录路径目录下的web.config配置文件来管理该虚拟目录及其子目录（可以在applicationHost.config的sites/virtualDirectoryDefaults节中使用allowSubDirConfig=”false”属性来关闭web.config对子目录的控制。）

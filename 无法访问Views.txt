@@ -1,0 +1,22 @@
+
+
+运行的时候发现找不到js和css文件
+因为在MVC中，是不建议直接去访问Views文件夹的
+我们建立的ASP.NET MVC程序在默认情况下会在Views目录下加了一个web.config文件
+访问Views目录下的所有的文件都会由System.Web.HttpNotFoundHandler来处理，所以如果要把js和css文件放到Views目录下的话，需要修改 Views/web.config文件
+ 
+
+
+ ===================================
+
+   <system.webServer>
+    <handlers>
+     <remove name="BlockViewHandler"/>
+
+	   //注释下面的就可以访问目录了
+      //// <add name="BlockViewHandler" path="*" verb="*" preCondition="integratedMode" type="System.Web.HttpNotFoundHandler" />
+    </handlers>
+  </system.webServer>
+
+
+

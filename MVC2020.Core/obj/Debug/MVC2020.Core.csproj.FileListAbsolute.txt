@@ -15,3 +15,10 @@ D:\ML\mvc5-web\MVC2020.Core\obj\Debug\MVC2020.Core.csprojResolveAssemblyReferenc
 D:\ML\mvc5-web\MVC2020.Core\obj\Debug\MVC2020.Core.dll
 D:\ML\mvc5-web\MVC2020.Core\obj\Debug\MVC2020.Core.pdb
 D:\ML\mvc5-web\MVC2020.Core\bin\Debug\MVC2020.Core.dll.config
+D:\ML\mvc5-web\MVC2020.Core\bin\Debug\EntityFramework.SqlServer.dll
+D:\ML\mvc5-web\MVC2020.Core\bin\Debug\LinqKit.dll
+D:\ML\mvc5-web\MVC2020.Core\bin\Debug\EntityFramework.xml
+D:\ML\mvc5-web\MVC2020.Core\bin\Debug\EntityFramework.SqlServer.xml
+D:\ML\mvc5-web\MVC2020.Core\bin\Debug\LinqKit.xml
+D:\ML\mvc5-web\MVC2020.Core\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\ML\mvc5-web\MVC2020.Core\bin\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll

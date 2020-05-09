@@ -201,16 +201,16 @@ namespace MVC2020.Core
 
 
 
-        /// <summary>
-        /// cesi--List
-        /// </summary>
-        /// <param name="where"></param>
-        /// <returns></returns>
-        public IQueryable<T> cesi66(Expression<Func<T,bool>> where)
-        {
-            return Repository.GetEntity(where,1,2,3,"message","UserID",true);
+        ///// <summary>
+        ///// cesi--List
+        ///// </summary>
+        ///// <param name="where"></param>
+        ///// <returns></returns>
+        //public IQueryable<T> cesi66(Expression<Func<T,bool>> where)
+        //{
+        //    return Repository.GetEntity(where,1,2,3,"message","UserID",true);
             
-        }
+        //}
     
 
     }

@@ -1,0 +1,23 @@
+
+
+
+如何在Windows Server中查询.Net Framework版本信息
+
+
+·打开我的电脑，在地址栏中输入"%systemroot%\Microsoft.NET\Framework"，在显示的路径下会有.Net Framework版本创建的folder，最高版本就是当前环境的 .Net版本了。
+
+
+
+==========================================================================
+
+下图为Net Framework的版本信息对照表供查询使用：
+
+
+3.5.30729.1      3.5 SP 1
+4.0.30319.1      4.0 RTM
+4.0.30319.225    4.0 SP 1
+4.0.30319.17929  4.5 RTM
+4.0.30319.18034  4.5 (KB2750147)
+
+https://blog.csdn.net/warmsunshine7/article/details/50826870/
+

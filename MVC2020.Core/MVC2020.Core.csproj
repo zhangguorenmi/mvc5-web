@@ -32,7 +32,13 @@
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Users\zhangguorenmi\Documents\Visual Studio 2013\Projects\ASP.NET MVC5 网站开发之Ninesky - 项目框架\Ninesky.DataLibrary\bin\Debug\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="LinqKit">
+      <HintPath>..\packages\LinqKit.1.1.17\lib\net45\LinqKit.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -56,7 +62,6 @@
     <Compile Include="GeneralFunction\GetModelErrorString.cs" />
     <Compile Include="GeneralFunction\Security.cs" />
     <Compile Include="GeneralTypes\Mess.cs" />
-    <Compile Include="GeneralTypes\OrderParam.cs" />
     <Compile Include="GeneralTypes\Paging.cs" />
     <Compile Include="GeneralTypes\Response.cs" />
     <Compile Include="Model\0模型类.cs" />
@@ -76,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
