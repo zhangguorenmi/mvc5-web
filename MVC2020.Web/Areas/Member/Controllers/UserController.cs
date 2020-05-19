@@ -9,6 +9,7 @@ using MVC2020.Core;
 using MVC2020.Core.GeneralFunction;
 using MVC2020.Core.GeneralTypes;
 using MVC2020.Core.Model;
+using MVC2020.Web.Areas.Member.Models;
 
 namespace MVC2020.Web.Areas.Member.Controllers
 {
@@ -29,6 +30,89 @@ namespace MVC2020.Web.Areas.Member.Controllers
         public ActionResult Index( )
         {
             return View();
+        }
+
+
+
+
+        /// <summary>
+        /// 添加用户
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult Add( )
+        {
+            //角色列表
+            var _roles = new RoleManager().FindList();
+            List<SelectListItem> _listItems = new List<SelectListItem>(_roles.Count());
+            foreach(var _role in _roles)
+            {
+                _listItems.Add(new SelectListItem() { Text = _role.Name,Value = _role.RoleID.ToString() });
+            }
+            ViewBag.Roles = _listItems;
+            //角色列表结束
+            return View();
+        }
+
+
+
+
+        /// <summary>
+        /// 
+        /// 一个user控制器中的一个方法页面可以包括多个视图页面
+        /// UserController-Add（Add.cshtml+Prompt.cshtml）
+        /// 控制器文件夹中一个控制器（一个网页）
+        /// 一个控制器（一个网页）对应一个文件夹
+        /// 一个文件夹中为控制器中的所有方法（页面和部分页面）
+        /// 
+        /// </summary>
+        /// <param name="userViewModel"></param>
+        /// <returns></returns>
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Add(AddUserViewModel userViewModel)
+        {
+            if(userManager.HasUsername(userViewModel.Username)) ModelState.AddModelError("Username","用户名已存在");
+            if(userManager.HasEmail(userViewModel.Email)) ModelState.AddModelError("Email","Email已存在");
+            if(ModelState.IsValid)
+            {
+                User _user = new User();
+                _user.RoleID = userViewModel.RoleID;
+                _user.Username = userViewModel.Username;
+                _user.Name = userViewModel.Name;
+                _user.Sex = userViewModel.Sex;
+                _user.Password = Security.Sha256(userViewModel.Password);
+                _user.Email = userViewModel.Email;
+                _user.RegTime = System.DateTime.Now;
+                var _response = userManager.Add(_user);
+                if(_response.Code == 1)
+                
+                    //1-为响应呈现的视图。2-视图呈现的模型。
+                return View("Prompt",new Prompt()
+                {
+                    Title = "添加用户成功",
+                    Message = "您已成功添加了用户【" + _response.Data.Username + "（" + _response.Data.Name + "）】",
+                    Buttons = new List<string> 
+                    {
+                        "<a href=\"" + Url.Action("Index", "User")                                     + "\" class=\"btn btn-default\">用户管理</a>",
+                        "<a href=\"" + Url.Action("Details", "User",new { id= _response.Data.UserID }) + "\" class=\"btn btn-default\">查看用户</a>",
+                        "<a href=\"" + Url.Action("Add", "User")                                       + "\" class=\"btn btn-default\">继续添加</a>"
+                    }
+
+                }
+                );//View end
+                else ModelState.AddModelError("",_response.Message);
+            }
+            //角色列表
+            var _roles = new RoleManager().FindList();
+            List<SelectListItem> _listItems = new List<SelectListItem>(_roles.Count());
+            foreach(var _role in _roles)
+            {
+                _listItems.Add(new SelectListItem() { Text = _role.Name,Value = _role.RoleID.ToString() });
+            }
+            ViewBag.Roles = _listItems;
+            //角色列表结束
+
+            return View(userViewModel);
         }
 
 
@@ -102,7 +186,7 @@ namespace MVC2020.Web.Areas.Member.Controllers
 
 
             //////IQueryable<User> tt = userManager.FindPageList(u => u.UserID > 0);
-           
+
             ////// var _paging11 = userManager.FindPageList(u => u.UserID > 0);
 
             ////ActionResult aa1 = Json(new { total = _paging11.TotalNumber,rows = _paging11.Items });
@@ -111,19 +195,19 @@ namespace MVC2020.Web.Areas.Member.Controllers
             //001
             //==================================================================================================
 
-                ////20200423 测试成功  用ToList();   立即查询
+            ////20200423 测试成功  用ToList();   立即查询
 
-                //UserManager userManager22 = new UserManager();//添加变量
-                ////List<User> uis = userManager22.cesi66(u => u.UserID > 0);
-                //IQueryable<User> uis = userManager22.cesi66(u => u.UserID > 0);
-                ////int aa = uis.Count();//立即查询  不要延迟查询  失败
+            //UserManager userManager22 = new UserManager();//添加变量
+            ////List<User> uis = userManager22.cesi66(u => u.UserID > 0);
+            //IQueryable<User> uis = userManager22.cesi66(u => u.UserID > 0);
+            ////int aa = uis.Count();//立即查询  不要延迟查询  失败
 
-                //List<User> uis1 = uis.ToList(); 
-            
-                //int aa = uis.Count();
+            //List<User> uis1 = uis.ToList(); 
 
-                ////ActionResult aa111 = Json(uis);
-                //return Json(uis1);
+            //int aa = uis.Count();
+
+            ////ActionResult aa111 = Json(uis);
+            //return Json(uis1);
 
             //====================================================================================================
 
@@ -131,10 +215,10 @@ namespace MVC2020.Web.Areas.Member.Controllers
             ///002
             //======================================================================================================
 
-                ////2020-04-23 23:00   仓储中的FindPageList测试成功  查出来的是SQL语句  这里需要转换一下就可以执行语句 获得结果了
-                //IQueryable<User> tt = userManager.FindPageList(u => u.UserID > 0);
-                //List<User> uis1 = tt.ToList();
-                //return Json(uis1);
+            ////2020-04-23 23:00   仓储中的FindPageList测试成功  查出来的是SQL语句  这里需要转换一下就可以执行语句 获得结果了
+            //IQueryable<User> tt = userManager.FindPageList(u => u.UserID > 0);
+            //List<User> uis1 = tt.ToList();
+            //return Json(uis1);
 
             //===============================================================================================================
 

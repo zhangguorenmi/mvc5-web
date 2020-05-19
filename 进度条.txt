@@ -274,8 +274,14 @@ FindPageList      (int pageSize, int pageIndex, out int totalNumber, Expression<
   2-虚拟目录不要要
   3-WEB要转化为应用户改程序？
   4-不能直接查看目录（VIEW直接查看受限）
-  5-路由器问题  路由的地址要注意  http://www.mvc5.com/MVC2020.Web/Home/About
+  5-路由器问题  路由的地址要注意  http://www.mvc5.com/MVC2020.Web/Home/About   http://localhost:26362/Member/Home
 
 ·更新了下阿里巴巴主页
 
+=================================================================================
+
+2020-05-20 23：11
+
+·  完成第七章  用户功能 2 用户添加和浏览
+·  IEnumerable和List有什么区别? https://www.cnblogs.com/huangfenggu/p/4413753.html
 

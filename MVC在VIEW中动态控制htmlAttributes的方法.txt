@@ -1,0 +1,19 @@
+
+
+https://blog.csdn.net/weixin_34247299/article/details/85902838?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase
+
+
+在项目中有一个Html.DropDownListFor放在一个分部视图中，然后调用这个分部视图时需要动态控制这个DropDownList的显示方式，比如宽度、是否禁用、是否列表等，这些值的设置都在 Html.DropDownListFor的htmlAttributes参数中设置，如：
+
+@Html.DropDownListFor(m => m.ClassID, ViewBag.List as SelectList, new { @style = "width:280px;", size = "20", disabled = "disabled" })
+对于这个htmlAttributes，它可接受的数据类型可以是一个Object或IDictionary(string,Object)，而我们在DropDownListFor扩展方法中所写的new { @style = "width:280px;"}其实是一个匿名类。
+
+
+
+
+
+通过非匿名类的方式动态控制htmlAttributes
+知道了这个匿名类，我们可以象下面这种方式来调用：
+
+var attList = new { @style = "width:280px;", size = "20" };
+@Html.DropDownListFor(m => m.ClassID, ViewBag.List as SelectList, attList)

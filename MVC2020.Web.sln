@@ -12,6 +12,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "问题集", "问题集", "{ED1C9906-7DAA-4B6D-9184-BACAD7E45E6E}"
 	ProjectSection(SolutionItems) = preProject
 		ASP.NET MVC路径引用总结.txt = ASP.NET MVC路径引用总结.txt
+		MVC在VIEW中动态控制htmlAttributes的方法.txt = MVC在VIEW中动态控制htmlAttributes的方法.txt
 		Route路由.txt = Route路由.txt
 		使用git bash上传文件到github仓库.txt = 使用git bash上传文件到github仓库.txt
 		进度条.txt = 进度条.txt
@@ -64,8 +65,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "bootstrapTable", "bootstrap
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "发布站点遇到的问题", "发布站点遇到的问题", "{2730DEA1-4A71-48AE-9BB0-2AC92B9B19F9}"
 	ProjectSection(SolutionItems) = preProject
+		IIS8中的站点、应用程序和虚拟目录详细介绍.txt = IIS8中的站点、应用程序和虚拟目录详细介绍.txt
 		TextFile1.txt = TextFile1.txt
 		无法访问Views.txt = 无法访问Views.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "辅助页和传值接收返回", "辅助页和传值接收返回", "{7DD5257F-C1F7-49A0-AEC0-A67CBFEFBF99}"
+	ProjectSection(SolutionItems) = preProject
+		HTML辅助方法 @Html.txt = HTML辅助方法 @Html.txt
+		MVC @Url.Action多个参数.txt = MVC @Url.Action多个参数.txt
+		return view详解.txt = return view详解.txt
 	EndProjectSection
 EndProject
 Global
@@ -102,6 +111,7 @@ Global
 		{6433BBA9-A93B-4092-8C1B-8EFA8105EB10} = {ED1C9906-7DAA-4B6D-9184-BACAD7E45E6E}
 		{76956607-15B0-4181-B67B-2309E3C5B67B} = {ED1C9906-7DAA-4B6D-9184-BACAD7E45E6E}
 		{2730DEA1-4A71-48AE-9BB0-2AC92B9B19F9} = {ED1C9906-7DAA-4B6D-9184-BACAD7E45E6E}
+		{7DD5257F-C1F7-49A0-AEC0-A67CBFEFBF99} = {ED1C9906-7DAA-4B6D-9184-BACAD7E45E6E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		VisualSVNWorkingCopyRoot = .

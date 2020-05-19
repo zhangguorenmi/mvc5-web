@@ -169,8 +169,9 @@
     <Compile Include="Areas\Member\Controllers\UserController.cs" />
     <Compile Include="Areas\Member\MemberAreaRegistration.cs" />
     <Compile Include="Areas\Member\Models\AddAdminViewModel.cs" />
+    <Compile Include="Areas\Member\Models\AddUserViewModel.cs" />
     <Compile Include="Areas\Member\Models\LoginViewModel.cs" />
-    <Compile Include="Areas\Member\Views\User\nnl.cs" />
+    <Compile Include="Areas\Member\Models\Prompt.cs" />
     <Compile Include="Areas\Setup\Controllers\HomeController.cs" />
     <Compile Include="Areas\Setup\SetupAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -235,6 +236,9 @@
     <Content Include="Areas\Member\Views\Role\cesi.cshtml" />
     <Content Include="Areas\Member\Views\User\Index.cshtml" />
     <Content Include="Areas\Member\Views\User\SideNavPartialView.cshtml" />
+    <Content Include="Areas\Member\Views\User\Add.cshtml" />
+    <Content Include="Areas\Member\Views\User\Prompt.cshtml" />
+    <Content Include="Areas\Member\Views\User\PromptPartialView.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />

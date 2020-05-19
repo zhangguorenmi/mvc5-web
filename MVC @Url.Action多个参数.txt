@@ -1,0 +1,26 @@
+
+
+
+有时候碰到想要使用Url.Action传一些参数到后台，但发现只能传一个多个就会发现传不进去。一开始比较苦恼后来发现，
+
+只需加上 @Html.Raw(）问题就可以解决 
+
+
+=======================================================================================================
+如：
+
+@Html.Raw(Url.Action("StatusList","Status",new{Model.Customer_ID,searchText = Model.Lookup}))
+
+
+
+========================================第二=================================================================
+
+·View
+
+<iframe src="@Url.Action("Edit","Home",new {id=13,name="lizikang"})"></iframe>
+
+·Control
+
+Request["id"] 返回 13
+
+Request["Name"] 返回 null

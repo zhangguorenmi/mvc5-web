@@ -1,0 +1,117 @@
+
+return view详解
+
+https://www.cnblogs.com/damsoft/p/6016418.html
+
+******************************************************************************************************
+
+1、return View();
+返回值
+类型：System.Web.Mvc.ViewResult
+将视图呈现给响应的 View() 结果。
+注释
+View() 类的此方法重载将返回一个具有空 ViewName 属性的 ViewResult 对象。 如果你正在编写控制器操作的单元测试，则需为那些不采用字符串视图名称的单元测试考虑到空 ViewName 属性。
+在运行时，如果 ViewName 属性为空，则将使用当前操作名称取代 ViewName 属性。
+
+2、return View(object model);   
+参数
+model
+类型：System.Object
+视图呈现的模型。
+返回值
+类型：System.Web.Mvc.ViewResult
+视图结果。
+注释
+ 
+View() 方法的此重载将返回一个具有空 ViewName 属性的 ViewResult 对象。 如果你正在编写控制器操作的单元测试，则需为那些不采用字符串视图名称的单元测试考虑到空 ViewName 属性。
+
+3、return View(string viewName);
+
+参数
+viewName
+类型：System.String
+为响应呈现的视图的名称。
+返回值
+类型：System.Web.Mvc.ViewResult
+视图结果。
+注释
+ 
+在执行此方法所准备的结果对象时，ASP.NET MVC 框架会将该对象写入响应。
+
+4、return View(IView view);
+
+参数
+view
+类型：System.Web.Mvc.IView
+为响应呈现的视图。
+返回值
+类型：System.Web.Mvc.ViewResult
+视图结果。
+注释
+ 
+在执行此方法所准备的结果对象时，ASP.NET MVC 框架会将该对象写入响应。
+
+*************************************************************************************
+5 return View(string viewName, object model);
+
+参数
+viewName
+类型：System.String
+为响应呈现的视图。
+model
+类型：System.Object
+视图呈现的模型。
+返回值
+类型：System.Web.Mvc.ViewResult
+视图结果。
+注释
+ 
+在执行此方法所准备的结果对象时，ASP.NET MVC 框架会将该对象写入响应。
+
+******************************************************************************************
+
+6 return View(string viewName, string masterName);
+
+参数
+viewName
+类型：System.String
+为响应呈现的视图的名称。
+masterName
+类型：System.String
+在呈现视图时要使用的母版页或模板的名称。
+返回值
+类型：System.Web.Mvc.ViewResult
+视图结果。
+注释
+ 
+在执行此方法所准备的结果对象时，ASP.NET MVC 框架会将该对象写入响应。
+
+7 return View(IView view, object model); 
+参数
+view
+类型：System.Web.Mvc.IView
+为响应呈现的视图。
+model
+类型：System.Object
+视图呈现的模型。
+返回值
+类型：System.Web.Mvc.ViewResult
+视图结果。
+注释
+ 
+在执行此方法所准备的结果对象时，ASP.NET MVC 框架会将该对象写入响应
+
+8return View(string viewName, string masterName, object model);
+参数
+viewName
+类型：System.String
+为响应呈现的视图的名称。
+masterName
+类型：System.String
+在呈现视图时要使用的母版页或模板的名称。
+model
+类型：System.Object
+视图呈现的模型。
+返回值
+类型：System.Web.Mvc.ViewResult
+视图结果。
