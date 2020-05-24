@@ -7,6 +7,6 @@ https://www.cnblogs.com/JK1989/p/6679523.html
 
 C#Lambda表达式：我为什么要使用它们？
 http://www.imooc.com/wenda/detail/568280
-
+匿名委托：delegate int del(int i);del myDelegate = x => x * x;int j = myDelegate(5); //j = 25
 
 ##########################################################################################
