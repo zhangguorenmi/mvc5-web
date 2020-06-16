@@ -11,3 +11,10 @@ D:\ML\mvc5-web\MVC2020.DataLibrary\obj\Debug\MVC2020.DataLibrary.dll
 D:\ML\mvc5-web\MVC2020.DataLibrary\obj\Debug\MVC2020.DataLibrary.pdb
 D:\ML\mvc5-web\MVC2020.DataLibrary\bin\Debug\MVC2020.DataLibrary.dll.config
 D:\ML\mvc5-web\MVC2020.DataLibrary\obj\Debug\MVC2020.DataLibrary.csprojResolveAssemblyReference.cache
+D:\ML2\MVC2020.Web.COM\MVC2020.DataLibrary\bin\Debug\MVC2020.DataLibrary.dll.config
+D:\ML2\MVC2020.Web.COM\MVC2020.DataLibrary\bin\Debug\MVC2020.DataLibrary.dll
+D:\ML2\MVC2020.Web.COM\MVC2020.DataLibrary\bin\Debug\MVC2020.DataLibrary.pdb
+D:\ML2\MVC2020.Web.COM\MVC2020.DataLibrary\bin\Debug\EntityFramework.dll
+D:\ML2\MVC2020.Web.COM\MVC2020.DataLibrary\obj\Debug\MVC2020.DataLibrary.dll
+D:\ML2\MVC2020.Web.COM\MVC2020.DataLibrary\obj\Debug\MVC2020.DataLibrary.pdb
+D:\ML2\MVC2020.Web.COM\MVC2020.DataLibrary\obj\Debug\MVC2020.DataLibrary.csprojResolveAssemblyReference.cache

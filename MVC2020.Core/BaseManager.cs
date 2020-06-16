@@ -5,8 +5,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
-using MVC2020.Core.Context;
-using MVC2020.Core.GeneralTypes;
+using MVC2020.Common;
 using MVC2020.DataLibrary;
 
 

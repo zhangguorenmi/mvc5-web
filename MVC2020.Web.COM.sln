@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC2020.Web", "MVC2020.Web\MVC2020.Web.csproj", "{FFEE7436-A881-467D-95EF-F26E9E2CE375}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC2020.Core", "MVC2020.Core\MVC2020.Core.csproj", "{999475E2-8784-41F3-9282-1BC15A508731}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC2020.DataLibrary", "MVC2020.DataLibrary\MVC2020.DataLibrary.csproj", "{61A689C6-1A4B-4EF3-8016-810761BFECEC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "通用框架", "通用框架", "{F5F9372D-70D5-474C-A378-8EDEA26DEDFB}"
+	ProjectSection(SolutionItems) = preProject
+		进度条.txt = 进度条.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC2020.Common", "ClassLibrary1\MVC2020.Common.csproj", "{0791ABFB-6C1A-4859-AC0B-188A0C19959C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFEE7436-A881-467D-95EF-F26E9E2CE375}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFEE7436-A881-467D-95EF-F26E9E2CE375}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFEE7436-A881-467D-95EF-F26E9E2CE375}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFEE7436-A881-467D-95EF-F26E9E2CE375}.Release|Any CPU.Build.0 = Release|Any CPU
+		{999475E2-8784-41F3-9282-1BC15A508731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{999475E2-8784-41F3-9282-1BC15A508731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{999475E2-8784-41F3-9282-1BC15A508731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{999475E2-8784-41F3-9282-1BC15A508731}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61A689C6-1A4B-4EF3-8016-810761BFECEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61A689C6-1A4B-4EF3-8016-810761BFECEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61A689C6-1A4B-4EF3-8016-810761BFECEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61A689C6-1A4B-4EF3-8016-810761BFECEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0791ABFB-6C1A-4859-AC0B-188A0C19959C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0791ABFB-6C1A-4859-AC0B-188A0C19959C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0791ABFB-6C1A-4859-AC0B-188A0C19959C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0791ABFB-6C1A-4859-AC0B-188A0C19959C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		VisualSVNWorkingCopyRoot = .
+	EndGlobalSection
+EndGlobal

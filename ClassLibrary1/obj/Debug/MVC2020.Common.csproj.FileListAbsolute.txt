@@ -1,0 +1,6 @@
+D:\ML2\MVC2020.Web.COM\ClassLibrary1\bin\Debug\MVC2020.Common.dll
+D:\ML2\MVC2020.Web.COM\ClassLibrary1\bin\Debug\MVC2020.Common.pdb
+D:\ML2\MVC2020.Web.COM\ClassLibrary1\bin\Debug\EntityFramework.dll
+D:\ML2\MVC2020.Web.COM\ClassLibrary1\obj\Debug\MVC2020.Common.dll
+D:\ML2\MVC2020.Web.COM\ClassLibrary1\obj\Debug\MVC2020.Common.pdb
+D:\ML2\MVC2020.Web.COM\ClassLibrary1\obj\Debug\MVC2020.Common.csprojResolveAssemblyReference.cache

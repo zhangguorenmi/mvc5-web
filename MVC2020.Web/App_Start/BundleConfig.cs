@@ -8,53 +8,57 @@ namespace MVC2020.Web
         // 有关绑定的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkId=301862
         public static void RegisterBundles(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
+
+            ////////////////////////////////////////////////////////////////////////////////////////////////////
+
+            bundles.Add(new ScriptBundle("~/Scripts/jquery").Include(             //js
                         "~/Scripts/jquery-{version}.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+            bundles.Add(new ScriptBundle("~/Scripts/jqueryValidate").Include(    //客户端表单验证
                         "~/Scripts/jquery.validate*"));
 
-            // 使用要用于开发和学习的 Modernizr 的开发版本。然后，当你做好
-            // 生产准备时，请使用 http://modernizr.com 上的生成工具来仅选择所需的测试。
-            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
+            bundles.Add(new ScriptBundle("~/Scripts/modernizr").Include(         //使用Modernizr进行特征检测实现跨浏览器兼容性
                         "~/Scripts/modernizr-*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+            bundles.Add(new ScriptBundle("~/Scripts/bootstrap66").Include(        //bootstrap
+                  "~/Scripts/bootstrap/bootstrap.min.js",
+                  "~/Scripts/bootstrap/respond.js")); //实现响应式网页设计- 靠前放置放置闪烁
 
+            bundles.Add(new StyleBundle("~/Css/Bootstrap11").Include(
+                    "~/Content/bootstrap/bootstrap.min.css",
+                    "~/Content/site.css"));
 
-            //添加Content文件夹中绑定
-            bundles.Add(new StyleBundle("~/Content/controlcss").Include(
-                    "~/Content/bootstrap.css",
-                    "~/Content/StyleContent.css"));
+            //bundles.Add(new StyleBundle("~/Css/Bootstrap22").Include(
+            //        "~/Content/bootstrap/bootstrap.min.css",
+            //        "~/Content/StyleContent.css"));
 
+            /////////////////////////////////////////////////////////////////////////////////////////////////////
+            /////////////////////////////////////////////////////////////////////////////////////////////////////
 
             //bootstrapp 插件js
-            bundles.Add(new ScriptBundle("~/BootstrapScripts/bootstrapJs").Include(
-                     "~/Scripts/moment-with-locales.js",
+            bundles.Add(new ScriptBundle("~/Scripts/bootstrapCJ").Include(
+                     "~/Scripts/bootstrap/moment-with-locales.js",  //日期插件
                       "~/Scripts/modernizr-2.6.2.js",
-                     "~/Scripts/bootstrap-datetimepicker.js",
-                     "~/Scripts/bootstrap-dialog.js",
-                     "~/Scripts/bootstrap-select.js",
-                     "~/Scripts/bootstrap-select-zh_CN.js",
-                     "~/Scripts/bootstrap-table.js",
-                     "~/Scripts/bootstrap-table-zh-CN.js",
-                     "~/Scripts/bootstrap-treeview.js",
-                     "~/Scripts/jquery.twbsPagination.js"));
+                     "~/Scripts/bootstrap/bootstrap-datetimepicker.js",
+                     "~/Scripts/bootstrap/bootstrap-dialog.js",
+                     "~/Scripts/bootstrap/bootstrap-select.js",
+                     "~/Scripts/bootstrap/bootstrap-select-zh_CN.js",
+                     "~/Scripts/bootstrap/bootstrap-table.js",
+                     "~/Scripts/bootstrap/bootstrap-table-zh-CN.js",
+                     "~/Scripts/bootstrap/bootstrap-treeview.js",
+                     "~/Scripts/jquery.twbsPagination.js")); //分页插件
             //bootstrapp 插件 css
-            bundles.Add(new StyleBundle("~/BootstrapCss/bootstrapCss").Include(
-                    "~/Content/bootstrap-datetimepicker.css",
-                    "~/Content/bootstrap-dialog.css",
-                    "~/Content/bootstrap-select.css",
-                    "~/Content/bootstrap-table.css",
-                    "~/Content/bootstrap-treeview.css"));
+            bundles.Add(new StyleBundle("~/Css/bootstrapCJ").Include(
+                    "~/Content/bootstrap/bootstrap-datetimepicker.css",
+                    "~/Content/bootstrap/bootstrap-dialog.css",
+                    "~/Content/bootstrap/bootstrap-select.css",
+                    "~/Content/bootstrap/bootstrap-table.css",
+                    "~/Content/bootstrap/bootstrap-treeview.css"));
 
 
+
+            BundleTable.EnableOptimizations = true;  //是否打包压缩
 
 
         }

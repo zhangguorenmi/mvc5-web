@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 using MVC2020.DataLibrary;
 using MVC2020.Core.Model;
 using LinqKit;
-using MVC2020.Core.GeneralTypes;
+
 using System.Web.Mvc;
+using MVC2020.Common;
 
 namespace MVC2020.Core
 {

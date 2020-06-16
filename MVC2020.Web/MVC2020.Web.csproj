@@ -163,17 +163,9 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Areas\Member\Controllers\AdminController.cs" />
-    <Compile Include="Areas\Member\Controllers\HomeController.cs" />
-    <Compile Include="Areas\Member\Controllers\RoleController.cs" />
-    <Compile Include="Areas\Member\Controllers\UserController.cs" />
-    <Compile Include="Areas\Member\MemberAreaRegistration.cs" />
-    <Compile Include="Areas\Member\Models\AddAdminViewModel.cs" />
-    <Compile Include="Areas\Member\Models\AddUserViewModel.cs" />
-    <Compile Include="Areas\Member\Models\LoginViewModel.cs" />
-    <Compile Include="Areas\Member\Models\Prompt.cs" />
-    <Compile Include="Areas\Setup\Controllers\HomeController.cs" />
-    <Compile Include="Areas\Setup\SetupAreaRegistration.cs" />
+    <Compile Include="Areas\sdhrjtSys\sdhrjtSysAreaRegistration.cs" />
+    <Compile Include="Areas\sdhrjt\Controllers\DefaultController.cs" />
+    <Compile Include="Areas\sdhrjt\sdhrjtAreaRegistration.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -188,74 +180,62 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Areas\Member\Views\Admin\HtmlPage1.html" />
-    <Content Include="Content\bootstrap-datetimepicker.css" />
-    <Content Include="Content\bootstrap-datetimepicker.min.css" />
-    <Content Include="Content\bootstrap-dialog.css" />
-    <Content Include="Content\bootstrap-select.css" />
-    <Content Include="Content\bootstrap-select.min.css" />
-    <Content Include="Content\bootstrap-table.css" />
-    <Content Include="Content\bootstrap-treeview.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap-submenu.min.css" />
+    <Content Include="Content\bootstrap\bootstrap-datetimepicker.css" />
+    <Content Include="Content\bootstrap\bootstrap-datetimepicker.min.css" />
+    <Content Include="Content\bootstrap\bootstrap-dialog.css" />
+    <Content Include="Content\bootstrap\bootstrap-select.css" />
+    <Content Include="Content\bootstrap\bootstrap-select.min.css" />
+    <Content Include="Content\bootstrap\bootstrap-table.css" />
+    <Content Include="Content\bootstrap\bootstrap-treeview.css" />
+    <Content Include="Content\bootstrap\bootstrap.css" />
+    <Content Include="Content\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\offcanvas.min.css" />
     <Content Include="Content\StyleControl.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="HtmlPage1.html" />
-    <Content Include="Scripts\bootstrap-datetimepicker.js" />
-    <Content Include="Scripts\bootstrap-datetimepicker.min.js" />
-    <Content Include="Scripts\bootstrap-dialog.js" />
-    <Content Include="Scripts\bootstrap-select-zh_CN.js" />
-    <Content Include="Scripts\bootstrap-select.js" />
-    <Content Include="Scripts\bootstrap-table-zh-CN.js" />
-    <Content Include="Scripts\bootstrap-table.js" />
-    <Content Include="Scripts\bootstrap-treeview.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Areas\Member\Views\web.config" />
-    <Content Include="Areas\Member\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Member\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Member\Views\Home\Index.cshtml" />
-    <Content Include="Areas\Setup\Views\web.config" />
-    <Content Include="Areas\Setup\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Setup\Views\Shared\_Layout.cshtml" />
-    <Content Include="Areas\Setup\Views\Home\Index.cshtml" />
-    <Content Include="Areas\Member\Views\Admin\Login.cshtml" />
-    <Content Include="Content\bootstrap-select.css.map" />
-    <Content Include="Areas\Member\Views\Home\Index2.cshtml" />
-    <Content Include="Areas\Member\Views\Admin\MyInfo.cshtml" />
-    <Content Include="Areas\Member\Views\Admin\Index.cshtml" />
-    <Content Include="Areas\Member\Views\Admin\SideNavPartialView.cshtml" />
-    <Content Include="Areas\Member\Views\Admin\AddPartialView.cshtml" />
-    <Content Include="Areas\Member\Views\Role\Mess.cshtml" />
-    <Content Include="Areas\Member\Views\Role\Index.cshtml" />
-    <Content Include="Areas\Member\Views\Role\SideNavPartialView.cshtml" />
-    <Content Include="Areas\Member\Views\Role\Add.cshtml" />
-    <Content Include="Areas\Member\Views\Role\cesi.cshtml" />
-    <Content Include="Areas\Member\Views\User\Index.cshtml" />
-    <Content Include="Areas\Member\Views\User\SideNavPartialView.cshtml" />
-    <Content Include="Areas\Member\Views\User\Add.cshtml" />
-    <Content Include="Areas\Member\Views\User\Prompt.cshtml" />
-    <Content Include="Areas\Member\Views\User\PromptPartialView.cshtml" />
+    <Content Include="Scripts\bootstrap-submenu.js" />
+    <Content Include="Scripts\bootstrap-submenu.min.js" />
+    <Content Include="Scripts\bootstrap\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\bootstrap\bootstrap-datetimepicker.min.js" />
+    <Content Include="Scripts\bootstrap\bootstrap-dialog.js" />
+    <Content Include="Scripts\bootstrap\bootstrap-select-zh_CN.js" />
+    <Content Include="Scripts\bootstrap\bootstrap-select.js" />
+    <Content Include="Scripts\bootstrap\bootstrap-table-zh-CN.js" />
+    <Content Include="Scripts\bootstrap\bootstrap-table.js" />
+    <Content Include="Scripts\bootstrap\bootstrap-treeview.js" />
+    <Content Include="Scripts\bootstrap\bootstrap.js" />
+    <Content Include="Scripts\bootstrap\bootstrap.min.js" />
+    <Content Include="Content\bootstrap\bootstrap-select.css.map" />
+    <Content Include="Areas\sdhrjt\Views\web.config" />
+    <Content Include="Areas\sdhrjt\Views\Default\Index.cshtml" />
+    <Content Include="Areas\sdhrjt\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\sdhrjtSys\Views\web.config" />
+    <Content Include="Areas\sdhrjt\Views\Shared\_Layout.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\jquery.twbsPagination.js" />
     <Content Include="Scripts\jquery.twbsPagination.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\bootstrap\modernizr-2.6.2.js" />
+    <Content Include="Scripts\bootstrap\moment-with-locales.js" />
+    <Content Include="Scripts\bootstrap\moment-with-locales.min.js" />
+    <Content Include="Scripts\bootstrap\moment.js" />
+    <Content Include="Scripts\bootstrap\moment.min.js" />
+    <Content Include="Scripts\bootstrap\respond.js" />
+    <Content Include="Scripts\bootstrap\respond.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
-    <Content Include="Scripts\moment-with-locales.js" />
-    <Content Include="Scripts\moment-with-locales.min.js" />
-    <Content Include="Scripts\moment.js" />
-    <Content Include="Scripts\moment.min.js" />
-    <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\offcanvas.js" />
+    <Content Include="Scripts\offcanvas.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -292,10 +272,14 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Home\Index11.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Setup\Models\" />
+    <Folder Include="Areas\sdhrjtSys\Controllers\" />
+    <Folder Include="Areas\sdhrjtSys\Models\" />
+    <Folder Include="Areas\sdhrjtSys\Views\Shared\" />
+    <Folder Include="Areas\sdhrjt\Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -305,6 +289,10 @@
     <None Include="Project_Readme.html" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ClassLibrary1\MVC2020.Common.csproj">
+      <Project>{0791abfb-6c1a-4859-ac0b-188a0c19959c}</Project>
+      <Name>MVC2020.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MVC2020.Core\MVC2020.Core.csproj">
       <Project>{999475e2-8784-41f3-9282-1bc15a508731}</Project>
       <Name>MVC2020.Core</Name>

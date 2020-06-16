@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html>
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title -  系统管理</title>
+
+
+    @*通用脚本*@
+    @Scripts.Render("~/Scripts/jquery")
+    @Scripts.Render("~/Scripts/modernizr")
+    @Scripts.Render("~/Scripts/bootstrap66")
+
+    @*通用样式*@
+    @Styles.Render("~/Css/Bootstrap11")
+    @*@Styles.Render("~/Css/Bootstrap22")*@
+
+
+    @*其他插件 臃肿 放下面*@
+    @Scripts.Render("~/Scripts/bootstrapCJ")
+    @Styles.Render("~/Css/bootstrapCJ")
+
+
+
+    @Scripts.Render("~/Scripts/offcanvas.js")
+    @Styles.Render("~/Content/offcanvas.min.css")
+
+
+    @Scripts.Render("~/Scripts/bootstrap-submenu.min.js")
+    @Styles.Render("~/Content/bootstrap-submenu.min.css")
+
+
+    <style type="text/css">
+        body {
+            padding-top: 0px;
+            padding-bottom: 0px;
+        }
+    </style>
+
+    <script type="text/javascript">
+
+
+        $(document).ready(function () {
+
+            //$('.dropdown > a[tabindex]').keydown(function (event) {
+            //    // 13: Return
+
+            //    if (event.keyCode == 13) {
+            //        $(this).dropdown('toggle');
+            //    }
+            //});
+
+
+            $('.dropdown-submenu > a').submenupicker();
+
+
+        })
+
+    </script>
+
+
+    @*部分占位*@
+    @RenderSection("head",required: false)
+</head>
+
+
+<body>
+
+
+    @*//顶部菜单*@
+    <div class="overlay"></div>
+    <nav class="navbar navbar-inverse navbar-static-top">
+        <div class="container">
+
+            @*三个横线*@
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed pull-left" data-toggle="offcanvas">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">后台管理</a>
+            </div>
+            @*导航栏*@
+            <div id="navbar" class="collapse navbar-collapse sidebar-offcanvas ">
+
+                <div class="dropdown">
+
+                    <ul class="nav navbar-nav">
+
+                        <li><a href="@Url.Action("Index","User")"><span class="glyphicon glyphicon-user"></span> 产品中心</a></li>
+                        <li><a href="@Url.Action("Index","Role")"><span class="glyphicon glyphicon-user"></span> 资讯中心</a></li>
+                        <li><a href="@Url.Action("Index","Admin")"><span class='glyphicon glyphicon-lock'></span> 公司信息</a></li>
+                        <li><a><span class="glyphicon glyphicon-list"></span> 网站配置</a></li>
+
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" id="web-item" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">前端开发 <span class="caret"></span></a>
+                            <!--下拉菜单按钮-->
+                            <ul class="dropdown-menu">
+                                <li><a href="#">HTML/CSS</a></li>
+                                <li><a href="#">JavaScript</a></li>
+                                <li><a href="#">jQuery</a></li>
+                                <li><a href="#">Bootstrap</a></li>
+                                <li><a href="#">node.js</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="dropdown-submenu">
+                            <!--开始 -->
+                            <a tabindex="0" data-toggle="dropdown">Another action</a>
+
+                            <ul class="dropdown-menu">
+
+                                <li class="disabled"><a tabindex="0">2333</a></li>
+
+                                <li class="dropdown-header">1111</li>
+
+                                <li><a tabindex="0">2222</a></li>
+                                <li><a tabindex="0">5555</a></li>
+
+                            </ul>
+                        </li><!-- 结束 -->
+
+
+                    </ul>
+                </div>
+            </div><!--/.nav-collapse -->
+        </div>
+    </nav>
+
+    @*//内容*@
+    <div class="container body-content">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-4">@RenderSection("SideNav",false)</div>@*左栏目*@
+            <div class="col-lg-9 col-md-9 col-sm-8">@RenderBody()</div>@*右栏目*@
+        </div>
+        <hr />
+    </div>
+
+    @*//底部*@
+    <div class="container body-content">
+        <footer>
+            <p>&copy; @DateTime.Now.Year - 山东恒仁集团</p>
+        </footer>
+    </div>
+
+
+    @*//后加载 提高响应速度*@
+    @*@Scripts.Render("~/Scripts/bootstrapCJ")
+        @Styles.Render("~/Css/bootstrapCJ")*@
+
+    @*//子视图动态添加样式和js脚本*@
+    @RenderSection("style",false)
+    @RenderSection("scripts",false)
+</body>
+
+
+
+</html>

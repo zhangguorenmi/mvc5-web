@@ -26,5 +26,11 @@ namespace MVC2020.Web.Controllers
 
             return View();
         }
+
+
+        public ActionResult Index11( )
+        {
+            return View();
+        }
     }
 }
